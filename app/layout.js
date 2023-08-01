@@ -1,3 +1,4 @@
+import Navbar from "@/layouts/Navbar";
 import "./globals.css";
 import { Nunito_Sans, Lato, Kalam } from "next/font/google";
 
@@ -40,8 +41,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="">{children}</body>
+    <html
+      lang="en"
+      className={`${nunitoSans.variable} ${lato.variable} ${kalam.variable}`}
+    >
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
