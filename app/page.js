@@ -1,7 +1,9 @@
+import React from "react";
+
 export default function Home() {
   return (
-    <h1 className="">
-      Lets create the landing page today!
-    </h1>
+    <div className=''>
+      
+    </div>
   );
 }
