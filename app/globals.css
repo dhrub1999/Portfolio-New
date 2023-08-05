@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.large-padding-block-container {
+    padding-block: min(3.5rem, 15vh);
+}

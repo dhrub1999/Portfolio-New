@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 const ActiveLink = ({ children, href }) => {
   const pathName = usePathname();
-  console.log(pathName);
   return (
     <Link
       href={href === 'home' ? '/' : `${href}`}
