@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Navbar from '@/layouts/Navbar';
 import './globals.css';
 import { Nunito_Sans, Lato, Kalam } from 'next/font/google';
+import NavbarContainer from '@/layouts/NavbarContainer';
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
@@ -47,10 +48,10 @@ export default function RootLayout({ children }) {
       className={`${nunitoSans.variable} ${lato.variable} ${kalam.variable}`}
     >
       <Head>
-        <meta name='viewport' minimum-scale='1.0'/>
+        <meta name='viewport' minimum-scale='1.0' />
       </Head>
       <body className='relative min-h-[100vh] overflow-x-hidden bg-neutral-20'>
-        <Navbar />
+        <NavbarContainer />
         {children}
       </body>
     </html>

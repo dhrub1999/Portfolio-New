@@ -3,5 +3,56 @@
 @tailwind utilities;
 
 .large-padding-block-container {
-    padding-block: min(3.5rem, 15vh);
+  padding-block: min(3.5rem, 15vh);
+}
+
+.large-padding-block-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(70px);
+  z-index: -1;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.one {
+  top: 10%;
+  left: -8%;
+  width: 81px;
+  height: 81px;
+  background-color: #34c982;
+}
+
+.two {
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 200px;
+  width: 200px;
+  background-color: #f89ae9;
+}
+
+.three {
+  top: 40%;
+  right: 0;
+  height: 120px;
+  width: 120px;
+  background-color: #f89ae9;
+}
+
+.four {
+  bottom: 5%;
+  left: 0;
+  height: 220px;
+  width: 220px;
+  background-color: #C5A2F1;
 }

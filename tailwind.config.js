@@ -11,7 +11,7 @@ module.exports = {
   ],
   theme: {
     screens: {
-      xs: '440px',
+      xs: '410px',
       sm: '570px',
       md: '800px',
       lg: '1024px',
@@ -21,7 +21,7 @@ module.exports = {
     colors: {
       primary: {
         100: '#E2D1F8',
-        200: '#C5A251',
+        200: '#C5A2F1',
         300: '#A874E9',
         400: '#8B46E2',
         500: '#6D17DB',

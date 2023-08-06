@@ -7,7 +7,7 @@ const Button = ({ className, id, variant, children }) => {
     } else if (variant === 'danger') {
       return 'bg-none border-danger-500 text-danger-500 hover:border-danger-300 hover:text-danger-500 focus:border-danger-600 focus:text-danger-600';
     } else {
-      return 'bg-primary-500 text-neutral-20 hover:bg-primary-400 focus:bg-primary-600';
+      return 'bg-accent-500 text-neutral-20 hover:bg-accent-400 focus:bg-accent-600';
     }
   };
 

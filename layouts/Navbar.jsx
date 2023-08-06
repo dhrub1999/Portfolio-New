@@ -1,38 +1,61 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import Logo from '@/components/logo/Logo';
 import InitialPadding from './InitialPadding';
-import useViewportWidth from '@/hooks/useViewportWidth';
 import { navLinks } from '@/helper/content';
 import ActiveLink from '@/components/ActiveLink';
 import Button from '@/components/Button';
-import Link from 'next/link';
+import useViewportWidth from '@/hooks/useViewportWidth';
 
 const Navbar = () => {
-  const width = useViewportWidth();
   const [clicked, setClicked] = useState(false);
+  const [activeLink, setActiveLink] = useState(false);
+  const viewportWidth = useViewportWidth();
+
+  const handleNavLink = () => {
+    if (viewportWidth < 768) {
+      setClicked(false);
+    }
+  };
+
+  const desktopHandleClick = () => {
+    setClicked(!clicked);
+  };
+
   const clickHandler = () => {
     setClicked(!clicked);
   };
-  // console.log(clicked);
+  useEffect(() => {
+    // Close mobile menu when the viewport width changes to desktop view
+    if (viewportWidth >= 768) {
+      setClicked(false);
+    }
+  }, [viewportWidth]);
+
   return (
     <header className='py-[12px]'>
       <InitialPadding>
         <div className='flex items-center justify-between'>
+          <div className='circle one'></div>
+          <div className='circle two'></div>
+          <div className='circle three'></div>
+          <div className='circle four'></div>
           <div className='logo-container'>
             <Logo className='h-auto w-[32px] fill-accent-500 delay-300 ease-in hover:fill-accent-400 active:fill-accent-600 md:w-[40px] lg:w-[48px]' />
           </div>
-          <div className={width >= 768 ? 'hidden' : ''}>
+          <div className={viewportWidth >= 768 ? 'hidden' : ''}>
             <nav
-              className={`absolute right-0 top-[0] grid h-[100vh] max-h-[750px] min-h-[600px] min-w-[100%] max-w-[380px] translate-x-0 items-center justify-end bg-neutral-30 p-[16px] transition-transform delay-200 ease-in-out dark:bg-neutral-600 md:px-[48px] lg:px-[64px] xl:px-[80px] ${
+              className={`bg-[rgba(255, 255, 255, 0.1)] absolute right-0 top-[0] grid h-[100vh] max-h-[750px] min-h-[600px] min-w-[100%] max-w-[380px] translate-x-0 items-center justify-end p-[16px] backdrop-blur-xl transition-transform delay-200 ease-in-out dark:bg-neutral-600 md:px-[48px] lg:px-[64px] xl:px-[80px] ${
                 clicked ? 'translate-x-0' : 'translate-x-[10000px]'
               }`}
             >
               <ul className='my-40px flex flex-col items-end justify-center gap-12'>
                 {navLinks.map((link, index) => (
                   <li
+                    onClick={handleNavLink}
                     key={index}
-                    className='font-kalam text-4xl font-bold tracking-widest transition-all delay-300 ease-in'
+                    className='list-item font-kalam text-4xl font-bold tracking-widest transition-all delay-300 ease-in'
                   >
                     <ActiveLink href={link.toLocaleLowerCase()}>
                       {link}
@@ -67,6 +90,34 @@ const Navbar = () => {
                 }`}
               ></span>
             </div>
+          </div>
+
+          {/* Desktop Nav */}
+
+          <div className={viewportWidth < 768 ? 'hidden' : ''}>
+            <nav>
+              <ul className='flex items-end justify-center gap-12'>
+                {navLinks.map((link, index) => (
+                  <li
+                    onClick={desktopHandleClick}
+                    key={index}
+                    className={`list-item font-lato text-base text-neutral-400 transition-all delay-300 ease-in hover:text-neutral-600 ${
+                      handleNavLink ? '' : 'text-primary-500'
+                    }`}
+                  >
+                    <Link
+                      href={
+                        link.toLocaleLowerCase() === 'home'
+                          ? '/'
+                          : link.toLocaleLowerCase()
+                      }
+                    >
+                      {link}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
         </div>
       </InitialPadding>
