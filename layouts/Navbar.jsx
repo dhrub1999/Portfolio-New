@@ -1,127 +1,71 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import Logo from '@/components/logo/Logo';
+
+import Logo from '@/components/icons/Logo';
+import { Icon } from '@/components/icons';
 import InitialPadding from './InitialPadding';
-import { navLinks } from '@/helper/content';
-import ActiveLink from '@/components/ActiveLink';
-import Button from '@/components/Button';
-import useViewportWidth from '@/hooks/useViewportWidth';
 
 const Navbar = () => {
-  const [clicked, setClicked] = useState(false);
-  const [activeLink, setActiveLink] = useState(false);
-  const viewportWidth = useViewportWidth();
-
-  const handleNavLink = () => {
-    if (viewportWidth < 768) {
-      setClicked(false);
-    }
-  };
-
-  const desktopHandleClick = () => {
-    setClicked(!clicked);
-  };
-
   const clickHandler = () => {
-    setClicked(!clicked);
+    console.log('click');
   };
-  useEffect(() => {
-    // Close mobile menu when the viewport width changes to desktop view
-    if (viewportWidth >= 768) {
-      setClicked(false);
-    }
-  }, [viewportWidth]);
-
   return (
-    <header className='py-[12px]'>
-      <InitialPadding>
-        <div className='flex items-center justify-between'>
-          <div className='circle one'></div>
-          <div className='circle two'></div>
-          <div className='circle three'></div>
-          <div className='circle four'></div>
-          <div className='logo-container'>
-            <Logo className='h-auto w-[32px] fill-accent-500 delay-300 ease-in hover:fill-accent-400 active:fill-accent-600 md:w-[40px] lg:w-[48px]' />
-          </div>
-          <div className={viewportWidth >= 768 ? 'hidden' : ''}>
-            <nav
-              className={`bg-[rgba(255, 255, 255, 0.1)] absolute right-0 top-[0] grid h-[100vh] max-h-[750px] min-h-[600px] min-w-[100%] max-w-[380px] translate-x-0 items-center justify-end p-[16px] backdrop-blur-xl transition-transform delay-200 ease-in-out dark:bg-neutral-600 md:px-[48px] lg:px-[64px] xl:px-[80px] ${
-                clicked ? 'translate-x-0' : 'translate-x-[10000px]'
-              }`}
+    <div className='py-8px'>
+      <InitialPadding className='flex w-full items-center justify-between'>
+        <div className='logo-container'>
+          <Logo className='h-28px w-auto fill-secondary md:h-32px lg:h-40px' />
+        </div>
+        <div className='theme-logo'>
+          <label className='swap swap-rotate'>
+            {/* this hidden checkbox controls the state */}
+            <input type='checkbox' />
+
+            {/* sun icon */}
+            <svg
+              className='swap-on h-28px w-auto fill-neutral-600 md:w-32px lg:h-40px'
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 24 24'
             >
-              <ul className='my-40px flex flex-col items-end justify-center gap-12'>
-                {navLinks.map((link, index) => (
-                  <li
-                    onClick={handleNavLink}
-                    key={index}
-                    className='list-item font-kalam text-4xl font-bold tracking-widest transition-all delay-300 ease-in'
-                  >
-                    <ActiveLink href={link.toLocaleLowerCase()}>
-                      {link}
-                    </ActiveLink>
-                  </li>
-                ))}
-              </ul>
+              <path d='M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z' />
+            </svg>
 
-              <div className='btn-container justify-self-end'>
-                <Button variant={'secondary'}>
-                  <Link href={'/contact'}>Contact</Link>
-                </Button>
-              </div>
-            </nav>
-
-            <div
-              className='hamburger group relative flex cursor-pointer flex-col gap-4px p-8px'
-              onClick={clickHandler}
+            {/* moon icon */}
+            <svg
+              className='swap-off h-28px w-auto fill-neutral-600 md:w-32px lg:h-40px'
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 24 24'
             >
-              <span
-                className={`block h-[2px] self-end rounded-full transition-all delay-300 ease-in ${
-                  clicked
-                    ? 'w-24px translate-x-1 translate-y-1 rotate-45 bg-primary-500'
-                    : 'w-16px bg-neutral-600 '
-                }`}
-              ></span>
-              <span
-                className={`block h-[2px] w-[24px] rounded-full transition-all delay-300 ease-in ${
-                  clicked
-                    ? '-translate-y-[2px] translate-x-1 -rotate-45 bg-accent-500'
-                    : 'bg-neutral-600'
-                }`}
-              ></span>
-            </div>
-          </div>
-
-          {/* Desktop Nav */}
-
-          <div className={viewportWidth < 768 ? 'hidden' : ''}>
-            <nav>
-              <ul className='flex items-end justify-center gap-12'>
-                {navLinks.map((link, index) => (
-                  <li
-                    onClick={desktopHandleClick}
-                    key={index}
-                    className={`list-item font-lato text-base text-neutral-400 transition-all delay-300 ease-in hover:text-neutral-600 ${
-                      handleNavLink ? '' : 'text-primary-500'
-                    }`}
-                  >
-                    <Link
-                      href={
-                        link.toLocaleLowerCase() === 'home'
-                          ? '/'
-                          : link.toLocaleLowerCase()
-                      }
-                    >
-                      {link}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
+              <path d='M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z' />
+            </svg>
+          </label>
         </div>
       </InitialPadding>
-    </header>
+      <nav className='fixed bottom-12px z-10 w-full md:block'>
+        <InitialPadding>
+          <ul className='backdrop-blur-8px flex w-full items-center justify-between rounded-full px-28px py-12px'>
+            <li>
+              <Link href={'/'}>
+                <Icon name='home' />
+                <p className='hidden md:block'>Home</p>
+              </Link>
+            </li>
+            <li>
+              <Link href={'/projects'}>
+                <Icon name='laptop' />
+                <p className='hidden md:block'>Projects</p>
+              </Link>
+            </li>
+            <li>
+              <Link href={'/about'}>
+                <Icon name='about' />
+                <p className='hidden md:block'>About</p>
+              </Link>
+            </li>
+          </ul>
+        </InitialPadding>
+      </nav>
+    </div>
   );
 };
 

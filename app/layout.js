@@ -1,25 +1,19 @@
-import Head from 'next/head';
+import { Nunito_Sans, Lato, Kalam, Lexend_Deca } from 'next/font/google';
+
 import Navbar from '@/layouts/Navbar';
 import './globals.css';
-import { Nunito_Sans, Lato, Kalam } from 'next/font/google';
-import NavbarContainer from '@/layouts/NavbarContainer';
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
   variable: '--font-nunito',
   display: 'swap',
-  // fallback: [
-  //   "Nunito Sans",
-  //   "system-ui",
-  //   "-apple-system",
-  //   "Segoe UI",
-  //   "Roboto",
-  //   "Oxygen",
-  //   "Ubuntu",
-  //   "Helvetica Neue",
-  //   "sans-serif",
-  // ],
+});
+
+const lexendDeca = Lexend_Deca({
+  subsets: ['latin'],
+  variable: '--font-lexend-deca',
+  display: 'swap',
 });
 
 const lato = Lato({
@@ -45,13 +39,11 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang='en'
-      className={`${nunitoSans.variable} ${lato.variable} ${kalam.variable}`}
+      data-theme='lofi'
+      className={`${nunitoSans.variable} ${lato.variable} ${kalam.variable} ${lexendDeca.variable}`}
     >
-      <Head>
-        <meta name='viewport' minimum-scale='1.0' />
-      </Head>
-      <body className='relative min-h-[100vh] overflow-x-hidden bg-neutral-20'>
-        <NavbarContainer />
+      <body className='bg-neutral-20 relative min-h-[100vh] overflow-x-hidden'>
+        <Navbar />
         {children}
       </body>
     </html>

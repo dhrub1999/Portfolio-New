@@ -11,11 +11,11 @@ export default function Home() {
     <section className='hero'>
       <div className='large-padding-block-container'>
         <InnerPadding>
-          <div className='content flex flex-col-reverse md:flex-row items-center gap-[3.5rem]'>
+          <div className='content flex flex-col-reverse items-center gap-[3.5rem] md:flex-row'>
             <div className='hero-content flex flex-col justify-center gap-[3.5rem]'>
               <div className='text-container flex flex-col items-center gap-16px text-center'>
                 <div className='headline-group'>
-                  <h4 className='mb-8px font-lato text-sm-xl font-semibold capitalize text-primary-500 md:text-md-xl xl:text-lg-xl'>
+                  <h4 className='text-[14px] text-secondary mb-8px font-lexendDeca font-500 capitalize md:text-[16px]'>
                     {homeContainer['special-text']}
                   </h4>
                   <h1 className='text-center font-nunito text-sm-5xl font-black text-neutral-600 sm:max-w-[70vw] sm:text-sm-6xl md:text-md-6xl xl:text-lg-6xl'>
@@ -27,8 +27,8 @@ export default function Home() {
                 </p>
               </div>
               <div className='grid place-content-center'>
-                <Button className=''>
-                  <Link href={'/projects'}>My projects</Link>
+                <Button variant={'primary'}>
+                  <Link href={'/projects'} className='select-none'>My projects</Link>
                 </Button>
               </div>
             </div>

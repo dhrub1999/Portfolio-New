@@ -9,8 +9,8 @@ const ActiveLink = ({ children, href }) => {
       href={href === 'home' ? '/' : `${href}`}
       className={
         (pathName === '/' && href === 'home') || pathName === `/${href}`
-          ? 'select-none rounded bg-neutral-40 px-[24px] py-[8px] text-neutral-700 shadow-sm transition-all delay-200 ease-in'
-          : 'select-none text-neutral-200 transition-all delay-300 ease-in hover:text-neutral-400 focus:text-neutral-500'
+          ? 'block p-8px rounded-full  bg-primary'
+          : 'rounded-full  bg-slate-500'
       }
     >
       {children}
