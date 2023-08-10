@@ -2,6 +2,7 @@ import { Nunito_Sans, Lato, Kalam, Lexend_Deca } from 'next/font/google';
 
 import Navbar from '@/layouts/Navbar';
 import './globals.css';
+import Footer from '@/layouts/Footer';
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
       <body className='bg-neutral-20 relative min-h-[100vh] overflow-x-hidden'>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

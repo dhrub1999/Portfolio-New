@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 // const Button = ({ className, id, variant, children }) => {
 //   const differentBtnStyles = (variant) => {
@@ -24,21 +25,19 @@ import React from 'react';
 //   );
 // };
 
-const Button = ({ variant, children }) => {
-  // const differentBtnStyles = (variant) => {
-  //   if(variant=== 'secondary') {
-  //     return 'btn btn-secondary rounded'
-  //   }
-  // }
-
+const Button = ({ variant, children, href }) => {
   return (
-    <button
-      className={`btn btn-${variant} rounded font-lexendDeca text-base font-500 capitalize text-base-100 lg:btn-lg ${
-        variant === 'secondary' ? 'btn-outline' : ''
-      }`}
-    >
-      {children}
-    </button>
+    <Link href={href}>
+      <button
+        className={`btn relative ${
+          variant === 'primary' ? 'btn-primary' : 'btn-secondary'
+        } rounded font-lexendDeca text-base font-500 capitalize text-base-100 lg:btn-lg ${
+          variant === 'secondary' ? 'btn-outline' : ''
+        }`}
+      >
+        {children}
+      </button>
+    </Link>
   );
 };
 

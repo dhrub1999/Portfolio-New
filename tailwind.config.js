@@ -22,7 +22,7 @@ module.exports = {
           'secondary-content': '#312954',
         },
       },
-      'drakula',
+      'dracula',
     ],
   },
   theme: {
@@ -36,6 +36,10 @@ module.exports = {
     },
 
     extend: {
+      colors: {
+        'transparent-dark': 'rgba(0, 0, 0, 0.1)',
+        'transparent-light': 'rgba(255, 255, 255, 0.1)',
+      },
       fontFamily: {
         nunito: ['var(--font-nunito)', ...defaultTheme.fontFamily.sans],
         lato: ['var(--font-lato)', ...defaultTheme.fontFamily.serif],
@@ -73,9 +77,9 @@ module.exports = {
         'lg-xl': ['1.5625rem', lineHeight],
         'md-xl': ['1.25rem', lineHeight],
         'sm-xl': ['1.025rem', lineHeight],
-        lg: ['1.25rem', lineHeight],
-        base: ['1rem', lineHeight],
-        sm: ['0.875rem', lineHeight],
+        lg: ['1.25rem', '160%'],
+        base: ['1rem', '160%'],
+        sm: ['0.875rem', '160%'],
         xs: ['0.75rem', lineHeight],
       },
       spacing: {

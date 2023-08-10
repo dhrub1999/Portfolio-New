@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Laptop = ({ name }) => {
+const Laptop = ({ name, className }) => {
   return (
     <svg
-      className='h-20px fill-none stroke-neutral-600 stroke-2'
+      className={`h-20px fill-none transition-all duration-150 ease-in ${className}`}
       name={name}
       viewBox='0 0 39 33'
       xmlns='http://www.w3.org/2000/svg'

@@ -11,24 +11,24 @@ export default function Home() {
     <section className='hero'>
       <div className='large-padding-block-container'>
         <InnerPadding>
-          <div className='content flex flex-col-reverse items-center gap-[3.5rem] md:flex-row'>
-            <div className='hero-content flex flex-col justify-center gap-[3.5rem]'>
+          <div className='content flex flex-col-reverse items-center gap-20px md:flex-row'>
+            <div className='hero-content flex flex-col justify-center gap-40px'>
               <div className='text-container flex flex-col items-center gap-16px text-center'>
                 <div className='headline-group'>
-                  <h4 className='text-[14px] text-secondary mb-8px font-lexendDeca font-500 capitalize md:text-[16px]'>
+                  <h4 className='mb-4px font-lexendDeca text-[14px] font-500 capitalize text-secondary md:text-[16px]'>
                     {homeContainer['special-text']}
                   </h4>
-                  <h1 className='text-center font-nunito text-sm-5xl font-black text-neutral-600 sm:max-w-[70vw] sm:text-sm-6xl md:text-md-6xl xl:text-lg-6xl'>
+                  <h1 className='text-center font-nunito text-sm-5xl font-black text-gray-700 sm:max-w-[70vw] sm:text-sm-6xl md:text-md-6xl xl:text-lg-6xl'>
                     {homeContainer.title}
                   </h1>
                 </div>
-                <p className='font-regular max-w-[70vw] font-lato text-sm tracking-wide text-neutral-400 md:text-lg'>
+                <p className='max-w-[70vw] font-lexendDeca text-sm font-400 tracking-wide text-gray-600 md:text-lg'>
                   {homeContainer.info}
                 </p>
               </div>
               <div className='grid place-content-center'>
-                <Button variant={'primary'}>
-                  <Link href={'/projects'} className='select-none'>My projects</Link>
+                <Button variant={'primary'} href={'/projects'}>
+                  My projects
                 </Button>
               </div>
             </div>
