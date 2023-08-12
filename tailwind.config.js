@@ -36,8 +36,12 @@ module.exports = {
     },
 
     extend: {
+      backgroundImage: {
+        'hero-projects': "url('/imgs/projects-hero.png')",
+      },
       colors: {
         'transparent-dark': 'rgba(0, 0, 0, 0.1)',
+        'overlay-dark': 'rgba(0, 0, 0, .8)',
         'transparent-light': 'rgba(255, 255, 255, 0.1)',
       },
       fontFamily: {

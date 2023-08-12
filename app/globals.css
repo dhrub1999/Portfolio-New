@@ -56,3 +56,11 @@
   width: 220px;
   background-color: #C5A2F1;
 }
+
+.truncate-para {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
