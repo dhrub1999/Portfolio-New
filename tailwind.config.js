@@ -36,6 +36,20 @@ module.exports = {
     },
 
     extend: {
+      animation: {
+        l2r: 'l2r 10s ease-in-out infinite',
+        r2l: 'r2l 10s ease-in-out infinite',
+      },
+      keyframes: {
+        l2r: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
+        r2l: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(100%)' },
+        },
+      },
       backgroundImage: {
         'hero-projects': "url('/imgs/projects-hero.png')",
       },

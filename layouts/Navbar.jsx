@@ -15,8 +15,8 @@ const Navbar = () => {
   const pathName = usePathname();
 
   return (
-    <div className='flex w-full items-center justify-between py-8px'>
-      <InitialPadding className='flex items-center justify-between'>
+    <div className='sticky top-0 z-[99] flex w-full items-center justify-between py-8px bg-slate-100'>
+      <InitialPadding className='relative flex items-center justify-between'>
         <div className='logo-container'>
           <Logo className='h-28px w-auto fill-gray-600 transition-all delay-200 ease-in hover:fill-gray-500 focus:fill-gray-700 md:h-32px lg:h-40px' />
         </div>

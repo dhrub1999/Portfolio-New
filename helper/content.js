@@ -151,7 +151,7 @@ export const codepenProjects = [
     title: 'Glitch effect',
     link: 'https://codepen.io/tamal-biswas/pen/RwpJQgQ',
     gif: '/imgs/codepens/glitch-effect.png',
-    desc: 'Experience the spooky allure of Halloween with our glitch effect image, adding an eerie twist to your visuals. Get ready for a hauntingly captivating display!',
+    desc: 'Experience the spooky allure of Halloween with my glitch effect image, that may add an eerie twist to your visuals. Get ready for a hauntingly captivating display!',
   },
   {
     id: 3,

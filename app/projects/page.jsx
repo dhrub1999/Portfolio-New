@@ -1,27 +1,29 @@
 import React from 'react';
+import Link from 'next/link';
 
 import { projects, codepenProjects, figmaDrafts } from '@/helper/content';
 import ProjectCard from './ProjectCard';
 import InnerPadding from '@/layouts/InnerPadding';
 import CodepenProjects from './CodepenProjects';
 import UIDesignGrid from './UIDesignGrid';
-import Link from 'next/link';
 import Lottie from './Lottie';
 
 const Projects = () => {
   return (
-    <div className='large-padding-block-container'>
-      <div className='hero-container'>
-        <InnerPadding>
+    <div className='mb-40px'>
+      <div className='hero-container mb-56px'>
+        <InnerPadding className='flex flex-col'>
           <Lottie />
-          <h2 className='text-center font-nunito text-sm-5xl font-700'>
-            Latest projects
-          </h2>
-          <p className='text-center font-lexendDeca text-sm font-400 tracking-wide text-slate-500'>
-            On my jousrney of becoming a self-taught Web Developer, these are
-            some of my gratest projects that helped me to learn and combine
-            various languages and features.
-          </p>
+          <div className='text-container text-center'>
+            <h2 className='mb-12px font-nunito text-sm-5xl font-700'>
+              Latest projects
+            </h2>
+            <p className='font-lexendDeca text-sm font-400 tracking-wide text-slate-500'>
+              On my jousrney of becoming a self-taught Web Developer, these are
+              some of my gratest projects that helped me to learn and combine
+              various languages and features.
+            </p>
+          </div>
         </InnerPadding>
       </div>
 
@@ -46,11 +48,11 @@ const Projects = () => {
 
       <div className='ui-designs mt-60px'>
         <InnerPadding>
-          <div className='text-container'>
-            <h3 className='mb-12px text-center font-nunito text-sm-4xl font-700 text-slate-500 md:text-md-4xl lg:text-lg-4xl'>
-              UI Dsigns
+          <div className='text-container text-center'>
+            <h3 className='mb-12px font-nunito text-sm-4xl font-700 text-slate-500 md:text-md-4xl lg:text-lg-4xl'>
+              UI Designs.
             </h3>
-            <p className='mb-20px text-center font-lexendDeca text-sm font-400 tracking-wide text-slate-500'>
+            <p className='mb-20px font-lexendDeca text-sm font-400 tracking-wide text-slate-500'>
               Having design sense is crucial for front-end developers as it
               enables them to create visually appealing and user-friendly
               interfaces, ensuring a seamless and engaging user experience.
