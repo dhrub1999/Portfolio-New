@@ -13,7 +13,7 @@ const About = () => {
       const scrollPos = window.scrollY;
       const windowHeight = window.innerHeight;
       const docHeight = document.body.scrollHeight;
-      const newTranslateX = scrollPos / (docHeight - windowHeight) * 2;
+      const newTranslateX = (scrollPos / (docHeight - windowHeight)) * 2;
       setTranslateX(newTranslateX);
     };
 
@@ -27,7 +27,7 @@ const About = () => {
   return (
     <section className='large-padding-block-container'>
       <InnerPadding>
-        <div className='about-landing-container'>
+        <div className='about-landing-container flex flex-col items-center justify-center'>
           <div className='img-background aspect-square max-w-[330px] rounded-xl bg-slate-200 shadow-xl'>
             <ProfileImg />
           </div>
@@ -53,11 +53,15 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className='toolkit-section relative mt-40px'>
+        <div className='toolkit-section relative mt-56px'>
+          <h4 className='mb-20px text-center font-nunito text-sm-3xl font-700 text-slate-600 md:text-md-3xl lg:text-lg-3xl'>
+            My Toolkits
+          </h4>
+          <p className='font-lexendDeca text-sm font-400 text-slate-500'></p>
           <ToolkitBanner translatePositiveX={translateX} />
         </div>
       </InnerPadding>
-    </section>
+    </section>                       
   );
 };
 

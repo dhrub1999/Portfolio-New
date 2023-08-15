@@ -33,9 +33,9 @@ import { TbBrandFramerMotion, TbBrandVscode } from 'react-icons/tb';
 
 const ToolkitBanner = ({ translatePositiveX }) => {
   return (
-    <div className='absolute flex flex-col gap-20px overflow-hidden'>
+    <div className='relative flex h-[30vh] w-full flex-col gap-20px overflow-hidden aspect-square text-slate-300'>
       <div
-        className='flex justify-start gap-8px overflow-x-auto text-sm-5xl transition-transform ease-in'
+        className='absolute top-0 flex justify-start gap-8px overflow-x-auto text-sm-5xl transition-transform ease-in'
         style={{ transform: `translateX(-${translatePositiveX}%)` }}
       >
         <SiEslint />
@@ -66,8 +66,8 @@ const ToolkitBanner = ({ translatePositiveX }) => {
         <TbBrandVscode />
       </div>
       <div
-        className='flex flex-1 gap-8px overflow-x-hidden text-sm-5xl ease-out'
-        style={{ transform: `translateX(${translatePositiveX}%)` }}
+        className='absolute top-[50%] flex justify-start gap-8px overflow-x-auto text-sm-5xl transition-transform ease-in'
+        style={{ transform: `translate(${translatePositiveX}%, -50%)` }}
       >
         <RiTeamFill />
         <TbBrandFramerMotion />
@@ -97,7 +97,7 @@ const ToolkitBanner = ({ translatePositiveX }) => {
         <FaSass />
       </div>
       <div
-        className='flex flex-1 gap-8px overflow-x-hidden text-sm-5xl transition-transform ease-in'
+        className='absolute bottom-0 flex justify-start gap-8px overflow-x-auto text-sm-5xl transition-transform ease-in'
         style={{ transform: `translateX(-${translatePositiveX}%)` }}
       >
         <RiTeamFill />

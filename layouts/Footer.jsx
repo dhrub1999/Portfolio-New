@@ -7,7 +7,7 @@ import { FaGithubSquare, FaLinkedin, FaInstagramSquare } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className='relative z-10 bg-slate-200 py-16px'>
+    <footer className='relative z-50 bg-slate-200 py-16px'>
       <InitialPadding className='flex flex-col items-center justify-center'>
         <div className='logo-container mb-16px flex items-center gap-8px font-lexendDeca'>
           <Logo className='w-32px fill-secondary transition-all duration-200 ease-in hover:fill-secondary-content focus:fill-secondary-focus' />
