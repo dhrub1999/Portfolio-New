@@ -5,6 +5,9 @@ import ProfileImg from './ProfileImg';
 import InnerPadding from '@/layouts/InnerPadding';
 import Button from '@/components/Button';
 import ToolkitBanner from './ToolkitBanner';
+import { myBio } from '../../helper/content';
+import BioSection from './BioSection';
+import LottiePlayer from '@/components/LottiePlayer';
 
 const About = () => {
   const [translateX, setTranslateX] = useState(0);
@@ -13,7 +16,7 @@ const About = () => {
       const scrollPos = window.scrollY;
       const windowHeight = window.innerHeight;
       const docHeight = document.body.scrollHeight;
-      const newTranslateX = (scrollPos / (docHeight - windowHeight)) * 2;
+      const newTranslateX = (scrollPos / (docHeight - windowHeight)) * 5;
       setTranslateX(newTranslateX);
     };
 
@@ -53,15 +56,44 @@ const About = () => {
             </div>
           </div>
         </div>
+
+        <div className='journey-section mt-40px'>
+          <div className='grid-container grid gap-y-44px'>
+            <LottiePlayer
+              src='/lottie-animations/about-character.json'
+              className='h-auto'
+            />
+            <BioSection title={myBio[0]?.title} info={myBio[0]?.info} />
+            <BioSection title={myBio[1]?.title} info={myBio[1]?.info} />
+            <BioSection title={myBio[2]?.title} info={myBio[2]?.info} />
+            <LottiePlayer
+              src={'/lottie-animations/about-growth.json'}
+              className='h-auto'
+            />
+            <BioSection title={myBio[3]?.title} info={myBio[3]?.info} />
+            <BioSection title={myBio[4]?.title} info={myBio[4]?.info} />
+            <BioSection title={myBio[5]?.title} info={myBio[5]?.info} />
+            <LottiePlayer
+              src='/lottie-animations/about-collab.json'
+              className='h-auto'
+            />
+          </div>
+        </div>
+
         <div className='toolkit-section relative mt-56px'>
-          <h4 className='mb-20px text-center font-nunito text-sm-3xl font-700 text-slate-600 md:text-md-3xl lg:text-lg-3xl'>
+          <h4 className='mb-16px text-center font-nunito text-sm-3xl font-700 text-slate-600 md:text-md-3xl lg:text-lg-3xl'>
             My Toolkits
           </h4>
-          <p className='font-lexendDeca text-sm font-400 text-slate-500'></p>
-          <ToolkitBanner translatePositiveX={translateX} />
+          <p className='mb-12px text-center font-lexendDeca text-sm font-400 text-slate-500'>
+            From structuring new projects, to debugging and delivering the
+            project or upload, I use some leading technologies.
+          </p>
+          <div className='rounded-md bg-slate-600 p-12px shadow-md'>
+            <ToolkitBanner translatePositiveX={translateX} />
+          </div>
         </div>
       </InnerPadding>
-    </section>                       
+    </section>
   );
 };
 

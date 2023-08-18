@@ -67,7 +67,7 @@ const ToolkitBanner = ({ translatePositiveX }) => {
       </div>
       <div
         className='absolute top-[50%] flex justify-start gap-8px overflow-x-auto text-sm-5xl transition-transform ease-in'
-        style={{ transform: `translate(${translatePositiveX}%, -50%)` }}
+        style={{ transform: `translate(-${translatePositiveX + 30}%, -50%)` }}
       >
         <RiTeamFill />
         <TbBrandFramerMotion />

@@ -6,14 +6,14 @@ import ProjectCard from './ProjectCard';
 import InnerPadding from '@/layouts/InnerPadding';
 import CodepenProjects from './CodepenProjects';
 import UIDesignGrid from './UIDesignGrid';
-import Lottie from './Lottie';
+import LottiePlayer from '@/components/LottiePlayer';
 
 const Projects = () => {
   return (
     <div className='mb-40px'>
       <div className='hero-container mb-56px'>
         <InnerPadding className='flex flex-col'>
-          <Lottie />
+          <LottiePlayer src='/lottie-animations/projects-lottie.json' />
           <div className='text-container text-center'>
             <h2 className='mb-12px font-nunito text-sm-5xl font-700'>
               Latest projects

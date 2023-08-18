@@ -9,8 +9,9 @@ import InitialPadding from './InitialPadding';
 import Button from '@/components/Button';
 
 const Navbar = () => {
+  const [clicked, setClicked] = useState(false);
   const clickHandler = () => {
-    console.log('click');
+    setClicked(!clicked);
   };
   const pathName = usePathname();
 
@@ -46,8 +47,8 @@ const Navbar = () => {
             </label>
           </div>
 
-          <Button href={'/contact'} variant={'secondary'}>
-            contact
+          <Button href='/contact' onclick={clickHandler} variant={'secondary'}>
+            Contact me
           </Button>
         </div>
       </InitialPadding>
@@ -88,6 +89,19 @@ const Navbar = () => {
                     pathName === '/about'
                       ? 'fill-secondary stroke-0'
                       : 'stroke-neutral-600 stroke-2'
+                  }
+                />
+                <p className='hidden md:block'>About</p>
+              </Link>
+            </li>
+            <li>
+              <Link href={'/services'}>
+                <Icon
+                  name='service'
+                  className={
+                    pathName === '/services'
+                      ? 'stroke-secondary stroke-2'
+                      : 'stroke-neutral-600 stroke-1'
                   }
                 />
                 <p className='hidden md:block'>About</p>

@@ -201,3 +201,137 @@ export const figmaDrafts = [
     imgSrc: 'imgs/ui-designs/money-tracking-home.png',
   },
 ];
+
+export const myBio = [
+  {
+    id: 1,
+    title: 'About me',
+    info: "Hey there! I'm Tamal Biswas, a self-taught Front-end Developer and UI Designer. I have a passion for creating beautiful and modern websites that not only captivate users but also provide seamless and immersive experiences. With my expertise in the latest technologies like ReactJS, NextJS, EJS, MongoDB, HTML, CSS, JS, and Node, I can bring your digital dreams to life.",
+  },
+  {
+    id: 2,
+    title: 'My journey',
+    info: 'I embarked on my journey as a developer with a burning desire to learn and create. Armed with determination and an insatiable curiosity, I taught myself the intricacies of front-end development and UI design. Through countless hours of hands-on experience and continuous learning, I honed my skills to become a proficient and versatile developer.',
+  },
+  {
+    id: 3,
+    title: 'Technical expertise',
+    info: 'As a front-end developer, I specialize in creating stunning user interfaces with a focus on seamless user experiences. I am well-versed in the latest tech stack, including ReactJS, NextJS, EJS, MongoDB, HTML, CSS, JS, and Node. These technologies enable me to build dynamic and interactive websites that engage users and leave a lasting impression.',
+  },
+  {
+    id: 4,
+    title: 'Passionate storyteller',
+    info: 'What sets me apart from others is my ability to weave stories through my designs. I believe that a website is not just a collection of pages but a platform to tell a captivating story. By understanding your brand, target audience, and goals, I can create visually appealing designs that align with your narrative and evoke the desired emotions.',
+  },
+  {
+    id: 5,
+    title: 'Immersive UX',
+    info: 'User experience is at the core of every project I undertake. I strive to create intuitive and user-friendly interfaces that enhance usability and engagement. By conducting thorough research and employing best practices, I ensure that every element of the website contributes to a seamless and immersive user experience.',
+  },
+  {
+    id: 6,
+    title: "Let's collaborate",
+    info: "Whether you're a recruiter or a client, I am excited to collaborate with you and bring your vision to life. I am passionate about delivering high-quality work and building long-term relationships based on trust and mutual growth. Let's embark on a journey together and create exceptional digital experiences that leave a lasting impact.",
+  },
+];
+
+export const bridgingSection = [
+  {
+    id: 1,
+    title: 'Understanding your vision',
+    desc: "I start by diving deep into your project's vision and objectives. Understanding your goals helps me align my expertise with your aspirations, ensuring we're on the same page from the beginning.",
+  },
+  {
+    id: 2,
+    title: 'Open communication',
+    desc: 'Clear communication is key. Throughout the project, I maintain an open line of dialogue to ensure your ideas are heard and to keep you updated on the progress every step of the way.',
+  },
+  {
+    id: 3,
+    title: 'Tailoring your solution',
+    desc: "No two projects are the same, and I recognize that. I'll customize my approach to suit your specific needs, ensuring that the solutions I provide align perfectly with your unique goals",
+  },
+  {
+    id: 4,
+    title: 'Transparency & Trust',
+    desc: "Transparency is crucial to building trust. I'll keep you informed about the project's progress, potential challenges, and successes, giving you the confidence that we're working together toward success.",
+  },
+  {
+    id: 5,
+    title: 'Adapting to changes',
+    desc: "I understand that your vision might evolve as the project progresses. I'm flexible and ready to adapt to any changes or revisions, ensuring that your project remains in sync with your evolving goals.",
+  },
+  {
+    id: 6,
+    title: 'Milestones & Updates',
+    desc: "To keep you engaged and informed, I'll provide regular updates and milestones. This way, you can see the project taking shape and give valuable feedback at each stage.",
+  },
+  {
+    id: 7,
+    title: 'Ensuring top quality',
+    desc: "Quality is non-negotiable. I'm committed to delivering a product that meets high standards. I'll rigorously test and refine the project to ensure it aligns perfectly with your expectations.",
+  },
+  {
+    id: 8,
+    title: 'Creative problem solving',
+    desc: "Challenges are opportunities for creativity. If unexpected issues arise, I'll tackle them head-on, finding innovative solutions that maintain the integrity of the project.",
+  },
+  {
+    id: 9,
+    title: 'Paying attention to details',
+    desc: 'The little things matter. From design elements to coding standards, I pay meticulous attention to details to ensure that every aspect of the project reflects your vision.',
+  },
+  {
+    id: 10,
+    title: 'Meeting timelines',
+    desc: 'The little things matter. From design elements to coding standards, I pay meticulous attention to details to ensure that every aspect of the project reflects your vision.',
+  },
+  {
+    id: 11,
+    title: 'Support beyond launch',
+    desc: "My commitment extends beyond project completion. Even after launch, I'll be here to offer ongoing support and assistance, ensuring a smooth transition and addressing any needs that arise.",
+  },
+  {
+    id: 12,
+    title: 'Involving you as a partner',
+    desc: "Your input matters. I value your insights and involve you in key decisions, making you an active partner in the project's development journey.",
+  },
+  {
+    id: 13,
+    title: 'Budget-friendly approach',
+    desc: 'I understand the importance of budget. My pricing structure is flexible and designed to fit your financial considerations, ensuring you get the most value from our collaboration.',
+  },
+];
+
+export const faqSection = [
+  {
+    id: 1,
+    question: 'What services do you offer?',
+    answer:
+      'I offer comprehensive web development solutions, including website design, front-end development, e-commerce integration, content management systems, and ongoing maintenance.',
+  },
+  {
+    id: 2,
+    question: "What's the estimated timeline for completing a project.",
+    answer:
+      "Project timelines can vary depending on the complexity and scope. I'll work closely with you to outline a realistic timeline during the initial consultation.",
+  },
+  {
+    id: 3,
+    question: 'Do you provide ongoing support after the website is launched?',
+    answer:
+      'Absolutely. I believe in maintaining long-term partnerships. My post-launch support includes updates, security checks, troubleshooting, and any assistance you may need.',
+  },
+  {
+    id: 4,
+    question: 'How do you handle revisions and changes during the project?',
+    answer:
+      'We value your input. We provide a structured revision process, allowing you to review and request changes at specific milestones, ensuring your vision is captured accurately.',
+  },
+  {
+    id: 5,
+    question: 'Can you optimize my website for search engines (SEO)?',
+    answer:
+      "Absolutely. I implement best practices to enhance your website's visibility on search engines. This includes keyword optimization, meta tags, site structure, and more.",
+  },
+];
