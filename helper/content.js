@@ -335,3 +335,36 @@ export const faqSection = [
       "Absolutely. I implement best practices to enhance your website's visibility on search engines. This includes keyword optimization, meta tags, site structure, and more.",
   },
 ];
+
+export const refinedBridges = [
+  {
+    id: 1,
+    title: 'Requirement gathering',
+    desc: "I'll understand your needs and project scope to set clear expectations.",
+  },
+  {
+    id: 2,
+    title: 'Planning and Timeline',
+    desc: "Then I'll break tasks, set deadlines, and manage time efficiently.",
+  },
+  {
+    id: 3,
+    title: 'Design and Development',
+    desc: "After that I'll create UI/UX, code the website, and iterate based on feedback.",
+  },
+  {
+    id: 4,
+    title: 'Identify and Optimize',
+    desc: "Thereafter, I'll identify and fix bugs (if any), ensure speed, security, and cross-device functionality.",
+  },
+  {
+    id: 5,
+    title: 'Delivery and Launch',
+    desc: "Finally I'll deliver the website and offer post-launch support.",
+  },
+  {
+    id: 6,
+    title: 'Continuous support',
+    desc: "I'll maintain communication, update the website, and will give you assistance for ongoing success.",
+  },
+];

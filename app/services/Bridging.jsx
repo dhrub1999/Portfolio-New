@@ -1,5 +1,6 @@
 import React from 'react';
 import BridgingSteps from './BridgingSteps';
+import BridgingCards from './BridgingCards';
 
 const Bridging = ({ bridgingProcess }) => {
   return (
@@ -8,8 +9,11 @@ const Bridging = ({ bridgingProcess }) => {
         My effective website building process.
       </h3>
       <div className='grid-container grid-rows-13 mt-40px grid grid-cols-1 gap-y-32px md:grid-cols-2'>
-        {bridgingProcess.map((step, index) => (
+        {/* {bridgingProcess.map((step, index) => (
           <BridgingSteps bridge={step} num={index + 1} key={index} />
+        ))} */}
+        {bridgingProcess.map((bridge, index) => (
+          <BridgingCards bridge={bridge} num={index + 1} key={index} />
         ))}
       </div>
     </div>

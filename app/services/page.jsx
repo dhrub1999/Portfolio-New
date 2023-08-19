@@ -3,7 +3,7 @@ import InnerPadding from '@/layouts/InnerPadding';
 import LottiePlayer from '@/components/LottiePlayer';
 import Button from '@/components/Button';
 import Bridging from './Bridging';
-import { bridgingSection, faqSection } from '@/helper/content';
+import { bridgingSection, faqSection, refinedBridges } from '@/helper/content';
 import FAQs from './FAQs';
 import Link from 'next/link';
 
@@ -31,7 +31,7 @@ const Services = () => {
             className=''
           />
         </div>
-        <Bridging bridgingProcess={bridgingSection} />
+        <Bridging bridgingProcess={refinedBridges} />
         <div className='faq-section mt-64px'>
           <h3 className='mb-24px text-center font-nunito text-sm-4xl font-700 text-slate-700 md:text-md-4xl lg:text-lg-4xl'>
             Some FAQs
