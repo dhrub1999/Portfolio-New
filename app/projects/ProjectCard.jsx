@@ -21,7 +21,7 @@ const ProjectCard = ({ project }) => {
           </span>
         </p>
         <div className='card-actions mt-20px justify-start'>
-          <Link href={`/projects/${project?.id}`} target='_blank'>
+          <Link href={`/projects/${project?.id}`}>
             <button className='btn btn-primary btn-md rounded-sm font-lexendDeca capitalize text-base-200 hover:text-base-content'>
               Case Study
             </button>

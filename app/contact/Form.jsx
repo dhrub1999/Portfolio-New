@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -49,9 +49,9 @@ const Form = () => {
     <div className='form-section -mt-40px'>
       <InitialPadding>
         <div className='upper'>
-          <h3 className='text-center font-nunito text-sm-4xl font-700 text-slate-700 md:text-md-4xl lg:text-lg-4xl'>
+          <h2 className='text-center font-nunito text-sm-5xl font-700 text-slate-700 md:text-md-5xl lg:text-lg-5xl'>
             Get in touch
-          </h3>
+          </h2>
           <p className='text-center font-lexendDeca text-sm tracking-wide text-slate-500 md:text-base '>
             Project enquiry. Job offer, or even an Appreciation.
           </p>
@@ -75,7 +75,7 @@ const Form = () => {
                 value={formik.values.name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className='input input-bordered input-secondary w-full max-w-xs text-sm capitalize'
+                className='input input-bordered input-secondary w-full max-w-md text-sm capitalize'
                 placeholder='Tamal Biswas'
               />
               <span id='err-msg' className='mt-4px text-red-600'>
@@ -99,7 +99,7 @@ const Form = () => {
                 id='company-name'
                 value={formik.values.companyName}
                 onChange={formik.handleChange}
-                className='input input-bordered input-secondary w-full max-w-xs text-sm capitalize'
+                className='input input-bordered input-secondary w-full max-w-md text-sm capitalize'
                 placeholder='Web Factory'
               />
             </div>
@@ -120,7 +120,7 @@ const Form = () => {
                 value={formik.values.email}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className='input input-bordered input-secondary w-full max-w-xs text-sm'
+                className='input input-bordered input-secondary w-full max-w-md text-sm'
                 placeholder='contact.tamalbiswas@gmail.com'
               />
               <span id='err-msg' className='mt-4px text-red-600'>
@@ -130,7 +130,7 @@ const Form = () => {
               </span>
             </div>
 
-            <div className='form-control w-full max-w-xs font-lexendDeca text-sm text-slate-600'>
+            <div className='form-control w-full max-w-md font-lexendDeca text-sm text-slate-600'>
               <label className='label  justify-start gap-2px'>
                 <span className='label-text text-slate-600'>Your reason</span>
                 <span className='font-sm-xl label-text-alt text-red-600'>
@@ -159,8 +159,12 @@ const Form = () => {
                 <span className='label-text text-slate-500'>Message</span>
               </label>
               <textarea
-                className='textarea textarea-bordered textarea-secondary h-24 w-full max-w-xs'
-                placeholder='Write your message here'
+                className='textarea textarea-bordered textarea-secondary h-24 w-full max-w-md'
+                placeholder={
+                  formik.values.reason === 'New project'
+                    ? 'Project details (goals, timeline, etc.)'
+                    : 'Write your message here'
+                }
                 name='message'
                 value={formik.values.message}
                 onChange={formik.handleChange}
@@ -173,7 +177,7 @@ const Form = () => {
 
             <button
               type='submit'
-              className='btn btn-primary w-full max-w-xs rounded normal-case text-slate-100'
+              className='btn btn-primary w-full max-w-md rounded normal-case text-slate-100'
             >
               Send
             </button>
