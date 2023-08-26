@@ -20,7 +20,7 @@ const AdditionalFields = ({ reason, formik }) => {
             value={formik.values.budget}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            className='input input-bordered input-secondary w-full max-w-xs text-sm'
+            className='input input-bordered input-secondary w-full max-w-md text-sm'
             placeholder='Your budget'
           />
           <span id='err-msg' className='mt-4px text-red-600'>
@@ -29,7 +29,7 @@ const AdditionalFields = ({ reason, formik }) => {
               : ''}
           </span>
         </div>
-        <div className='form-control w-full max-w-xs font-lexendDeca text-sm text-slate-600'>
+        <div className='form-control w-full max-w-md font-lexendDeca text-sm text-slate-600'>
           <label className='label  justify-start gap-2px' htmlFor='currency'>
             <span className='label-text text-slate-600'>Your Currency</span>
             <span className='font-sm-xl label-text-alt text-red-600'>*</span>
@@ -56,7 +56,7 @@ const AdditionalFields = ({ reason, formik }) => {
   } else if (reason === 'Job offer') {
     return (
       <>
-        <div className='form-control w-full max-w-xs font-lexendDeca text-sm text-slate-600'>
+        <div className='form-control w-full max-w-md font-lexendDeca text-sm text-slate-600'>
           <label className='label  justify-start gap-2px' htmlFor='jobTitle'>
             <span className='label-text text-slate-600'>Job title</span>
             <span className='font-sm-xl label-text-alt text-red-600'>*</span>
@@ -80,7 +80,7 @@ const AdditionalFields = ({ reason, formik }) => {
           </span>
         </div>
 
-        <div className='form-control w-full max-w-xs font-lexendDeca text-sm text-slate-600'>
+        <div className='form-control w-full max-w-md font-lexendDeca text-sm text-slate-600'>
           <label className='label  justify-start gap-2px' htmlFor='jobType'>
             <span className='label-text text-slate-600'>Job type</span>
             <span className='font-sm-xl label-text-alt text-red-600'>*</span>

@@ -60,7 +60,6 @@ module.exports = {
       },
       fontFamily: {
         nunito: ['var(--font-nunito)', ...defaultTheme.fontFamily.sans],
-        lato: ['var(--font-lato)', ...defaultTheme.fontFamily.serif],
         lexendDeca: [
           'var(--font-lexend-deca)',
           ...defaultTheme.fontFamily.serif,

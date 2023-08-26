@@ -1,28 +1,68 @@
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion as m } from 'framer-motion';
 
 const CodepenProjects = ({ pen }) => {
   return (
-    <div className='card w-full bg-base-100 shadow-xl'>
-      <figure className='px-8px pt-8px'>
-        <img src={pen?.gif} alt={pen?.title} className='rounded-xl' />
-      </figure>
+    <m.div
+      className='card w-full bg-base-100 shadow-xl'
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.1, delayChildren: 0.2, staggerChildren: 0.4 }}
+    >
+      <m.div
+        className='relative aspect-square origin-center px-8px pt-8px'
+        initial={{ scale: 0.8 }}
+        whileInView={{ scale: 1 }}
+        exit={{ scale: 0 }}
+        transition={{ duration: 0.4, ease: 'easeIn' }}
+      >
+        {/* <img src={pen?.gif} alt={pen?.title} className='rounded-xl' /> */}
+        <Image
+          src={pen?.gif}
+          alt={pen?.title}
+          loading={'lazy'}
+          className='rounded-xl object-cover object-center'
+          objectFit='cover'
+          objectPosition='top'
+          layout='fill'
+        />
+      </m.div>
       <div className='card-body'>
-        <h4 className='card-title font-nunito text-sm-3xl font-700 text-secondary md:text-md-3xl lg:text-lg-3xl'>
+        <m.h4
+          className='card-title font-nunito text-md-2xl font-700 text-secondary lg:text-sm-3xl'
+          initial={{ opacity: 0, translateY: '15px' }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          exit={{ opacity: 0, translateY: '-15px' }}
+          transition={{ duration: 0.2, ease: 'easeIn' }}
+        >
           {pen?.title}
-        </h4>
-        <p className='font-lexendDeca text-sm font-400 text-slate-500 md:text-base'>
+        </m.h4>
+        <m.p
+          className='font-lexendDeca text-sm font-400 text-slate-500 md:text-base'
+          initial={{ opacity: 0, translateY: '15px' }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          exit={{ opacity: 0, translateY: '-15px' }}
+          transition={{ duration: 0.2, delay: 0.2, ease: 'easeIn' }}
+        >
           {pen?.desc}
-        </p>
-        <div className='card-actions mt-20px'>
+        </m.p>
+        <div className='card-actions mt-20px overflow-hidden'>
           <Link href={pen?.link} target='_blank'>
-            <button className='btn btn-secondary rounded font-lexendDeca font-400 capitalize text-slate-200 hover:text-slate-100'>
+            <m.button
+              className='btn btn-secondary rounded font-lexendDeca font-400 capitalize text-slate-200 hover:text-slate-100'
+              initial={{ opacity: 0, translateY: '15px' }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              exit={{ opacity: 0, translateY: '-15px' }}
+              transition={{ duration: 0.2, delay: 0.2, ease: 'easeIn' }}
+            >
               Codepen
-            </button>
+            </m.button>
           </Link>
         </div>
       </div>
-    </div>
+    </m.div>
   );
 };
 

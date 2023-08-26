@@ -4,7 +4,7 @@ const Service = ({ name, className }) => {
   return (
     <svg
       name={name}
-      className={`h-20px fill-none transition-all duration-150 ease-in ${className}`}
+      className={`h-20px fill-none transition-all duration-150 ease-in md:hidden ${className}`}
       viewBox='0 0 35 35'
       xmlns='http://www.w3.org/2000/svg'
     >

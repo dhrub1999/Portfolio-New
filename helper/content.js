@@ -73,9 +73,9 @@ export const projects = [
       'Many individuals struggle with keeping track of their expenses and understanding where their money is being spent. Traditional methods of expense tracking, such as manual record-keeping or using complex financial software, can be time-consuming and overwhelming. There is a need for a user-friendly solution that simplifies the process of expense tracking and provides clear visualizations to help users understand their spending patterns.',
     languageUsed:
       'The Expense Tracker project is developed using ReactJs, a popular JavaScript library for building user interfaces.',
-    Solution:
+    solution:
       'The Expense Tracker website provides a straightforward solution to the problem of expense tracking. By leveraging the power of ReactJs, the project offers a responsive and interactive user interface that is easy to navigate. The use of React hooks, specifically useState and useEffect, enables efficient state management and data fetching.',
-    Features: {
+    features: {
       'Expense Visualization':
         'The website provides users with clear visualizations with a bar chart of their expenses, allowing them to easily understand their spending patterns.',
       'Monthly Expense Tracking':
@@ -167,7 +167,7 @@ export const codepenProjects = [
   },
   {
     id: 3,
-    title: 'Interactive mobile menu',
+    title: 'Interactive Mobile Menu',
     link: 'https://codepen.io/tamal-biswas/pen/RwqvMgg',
     gif: '/imgs/codepens/mobile-menu.png',
     desc: 'This is a mobile menu with icons and text. The menu items are highlighted with an indicator, and clicking on an item activates it.',

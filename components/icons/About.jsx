@@ -3,7 +3,7 @@ import React from 'react';
 const About = ({ name, className }) => {
   return (
     <svg
-      className={`h-20px fill-none transition-all duration-150 ease-in ${className}`}
+      className={`h-20px fill-none transition-all duration-150 ease-in md:hidden ${className}`}
       name={name}
       viewBox='-1 -1 40 40'
       xmlns='http://www.w3.org/2000/svg'

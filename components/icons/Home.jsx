@@ -4,7 +4,7 @@ const Home = ({ name, className }) => {
   return (
     <svg
       name={name}
-      className={`h-20px fill-none transition-all duration-150 ease-in ${className}`}
+      className={`h-20px fill-none transition-all duration-150 ease-in md:hidden ${className}`}
       viewBox='-1 -1 44 42'
       xmlns='http://www.w3.org/2000/svg'
     >

@@ -1,20 +1,25 @@
+'use client';
 import React from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 import LottiePlayer from '@/components/LottiePlayer';
 import Form from './Form';
+import PageWrapper from '@/components/PageWrapper';
+import InnerPadding from '@/layouts/InnerPadding';
 
-const page = () => {
+const Contact = () => {
   return (
-    <div>
-        <div className="svg -mt-40px">
-            <LottiePlayer src="/lottie-animations/contact-hero.json"  />
+    <PageWrapper>
+      <InnerPadding>
+        <div className='mb-48px'>
+          <div className='svg -mt-40px'>
+            <LottiePlayer src='/lottie-animations/contact-hero.json' />
+          </div>
+          <Form />
         </div>
-      <Form />
-      {/* <div>
-        <h3 className='font-nunito font-700 text-sm-4xl'>Reach me out</h3>
-      </div> */}
-    </div>
+      </InnerPadding>
+    </PageWrapper>
   );
 };
 
-export default page;
+export default Contact;

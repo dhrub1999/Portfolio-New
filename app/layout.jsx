@@ -1,4 +1,4 @@
-import { Nunito_Sans, Lato, Kalam, Lexend_Deca } from 'next/font/google';
+import { Nunito_Sans, Kalam, Lexend_Deca } from 'next/font/google';
 
 import Navbar from '@/layouts/Navbar';
 import './globals.css';
@@ -15,13 +15,6 @@ const lexendDeca = Lexend_Deca({
   subsets: ['latin'],
   variable: '--font-lexend-deca',
   display: 'swap',
-});
-
-const lato = Lato({
-  subsets: ['latin'],
-  variable: '--font-lato',
-  display: 'swap',
-  weight: ['300', '400', '700', '900'],
 });
 
 const kalam = Kalam({
@@ -41,7 +34,7 @@ export default function RootLayout({ children }) {
     <html
       lang='en'
       data-theme='lofi'
-      className={`${nunitoSans.variable} ${lato.variable} ${kalam.variable} ${lexendDeca.variable}`}
+      className={`${nunitoSans.variable} ${kalam.variable} ${lexendDeca.variable}`}
     >
       <body className='bg-neutral-20 relative min-h-[100vh] overflow-x-hidden'>
         <Navbar />
