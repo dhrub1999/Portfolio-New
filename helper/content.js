@@ -212,6 +212,11 @@ export const figmaDrafts = [
     title: 'Money Tracking App Design',
     imgSrc: 'imgs/ui-designs/money-tracking-home.png',
   },
+  {
+    id: 1,
+    title: 'Business Landing Page',
+    imgSrc: 'imgs/ui-designs/clash-of-clans.png',
+  },
 ];
 
 export const myBio = [

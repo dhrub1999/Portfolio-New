@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
@@ -12,18 +12,25 @@ import { navUl, navLi } from '@/helper/framerAnimations';
 
 const Navbar = () => {
   const [clicked, setClicked] = useState(false);
+  const [theme, setTheme] = useState('lofi');
   const clickHandler = () => {
     setClicked(!clicked);
   };
+  const toggleTheme = () => {
+    setTheme(theme === 'lofi' ? 'dracula' : 'lofi');
+  };
+  useEffect(() => {
+    document.querySelector('html').setAttribute('data-theme', theme);
+  });
   const pathName = usePathname();
 
   return (
-    <div className='sticky top-0 z-[40] flex w-full items-center justify-between bg-slate-100 py-8px shadow-lg md:z-10 md:flex-col md:bg-slate-100 md:py-12px lg:py-20px'>
+    <div className='sticky top-0 z-[40] flex w-full items-center justify-between border-b-2 bg-slate-50 py-8px shadow-sm md:z-20  md:flex-col md:bg-slate-50 md:py-12px md:shadow-none'>
       <div className='relative w-full'>
         <InitialPadding>
           <div className='relative flex w-full items-center justify-between'>
             <div className='logo-container'>
-              <Logo className='h-28px w-auto fill-gray-800 transition-all delay-200 ease-in hover:fill-gray-950 focus:fill-gray-700 md:h-32px lg:h-40px' />
+              <Logo className='h-28px w-auto fill-gray-800 transition-all delay-200 ease-in hover:fill-primary focus:fill-gray-700 md:h-32px 2xl:h-32px' />
             </div>
 
             <div className='flex items-center gap-60px'>
@@ -35,7 +42,7 @@ const Navbar = () => {
                   whileInView='show'
                 >
                   <motion.li variants={navLi}>
-                    <Link href={'/'}>
+                    <Link href={'/'} prefetch={false}>
                       <Icon
                         name='home'
                         className={
@@ -46,7 +53,9 @@ const Navbar = () => {
                       />
                       <p
                         className={`hidden md:block ${
-                          pathName === '/' ? 'text-primary' : 'text-neutral-600'
+                          pathName === '/'
+                            ? 'text-primary underline underline-offset-2'
+                            : 'text-neutral-600'
                         }`}
                       >
                         Home
@@ -54,7 +63,7 @@ const Navbar = () => {
                     </Link>
                   </motion.li>
                   <motion.li variants={navLi}>
-                    <Link href={'/projects'}>
+                    <Link href={'/projects'} prefetch={false}>
                       <Icon
                         name='laptop'
                         className={
@@ -66,7 +75,7 @@ const Navbar = () => {
                       <p
                         className={`hidden md:block ${
                           pathName === '/projects'
-                            ? 'text-primary'
+                            ? 'text-primary underline underline-offset-2'
                             : 'text-neutral-600'
                         }`}
                       >
@@ -75,7 +84,7 @@ const Navbar = () => {
                     </Link>
                   </motion.li>
                   <motion.li variants={navLi}>
-                    <Link href={'/about'}>
+                    <Link href={'/about'} prefetch={false}>
                       <Icon
                         name='about'
                         className={
@@ -108,7 +117,7 @@ const Navbar = () => {
                       <p
                         className={`hidden md:block ${
                           pathName === '/services'
-                            ? 'text-primary'
+                            ? 'text-primary underline underline-offset-2'
                             : 'text-neutral-600'
                         }`}
                       >
@@ -122,7 +131,7 @@ const Navbar = () => {
               <div className='md:40px flex items-center gap-12px sm:gap-24px'>
                 <div className='theme-logo'>
                   <label className='swap swap-rotate'>
-                    <input type='checkbox' />
+                    <input type='checkbox' onClick={toggleTheme} />
 
                     <svg
                       className='swap-on h-28px w-auto fill-primary md:w-32px lg:h-40px'
@@ -147,6 +156,7 @@ const Navbar = () => {
                   href='/contact'
                   onclick={clickHandler}
                   variant={'secondary'}
+                  className={'lg:btn-md'}
                 >
                   Contact me
                 </Button>

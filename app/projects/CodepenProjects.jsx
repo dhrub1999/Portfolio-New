@@ -6,13 +6,13 @@ import { motion as m } from 'framer-motion';
 const CodepenProjects = ({ pen }) => {
   return (
     <m.div
-      className='card w-full bg-base-100 shadow-xl'
+      className='card w-full rounded-md bg-base-100 shadow-sm xl:shadow-md'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.1, delayChildren: 0.2, staggerChildren: 0.4 }}
     >
       <m.div
-        className='relative aspect-square origin-center px-8px pt-8px'
+        className='relative aspect-square max-h-[300px] origin-center px-8px pt-8px'
         initial={{ scale: 0.8 }}
         whileInView={{ scale: 1 }}
         exit={{ scale: 0 }}
@@ -23,7 +23,7 @@ const CodepenProjects = ({ pen }) => {
           src={pen?.gif}
           alt={pen?.title}
           loading={'lazy'}
-          className='rounded-xl object-cover object-center'
+          className='rounded-md object-cover object-center'
           objectFit='cover'
           objectPosition='top'
           layout='fill'

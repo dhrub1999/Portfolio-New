@@ -14,7 +14,7 @@ const BioSection = ({ title, info, className }) => {
         {title}
       </m.h4>
       <m.p
-        className='mt-8px font-lexendDeca text-sm font-400 tracking-wide text-slate-500 md:mt-12px'
+        className='mt-8px font-lexendDeca text-sm font-400 tracking-wide text-slate-500 md:mt-12px md:text-base'
         initial={{ opacity: 0, translateY: '15px' }}
         whileInView={{ opacity: 1, translateY: 0 }}
         exit={{ opacity: 0, translateY: '15px' }}

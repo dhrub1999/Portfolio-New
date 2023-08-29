@@ -8,13 +8,13 @@ import { projects, codepenProjects, figmaDrafts } from '@/helper/content';
 import InnerPadding from '@/layouts/InnerPadding';
 import LottiePlayer from '@/components/LottiePlayer';
 import PageWrapper from '@/components/PageWrapper';
+const CodepenProjects = dynamic(() => import('./CodepenProjects'), {
+  ssr: false,
+});
 const UIDesignGrid = dynamic(() => import('./UIDesignGrid'), {
   ssr: false,
 });
 const ProjectCard = dynamic(() => import('./ProjectCard'), {
-  ssr: false,
-});
-const CodepenProjects = dynamic(() => import('./CodepenProjects'), {
   ssr: false,
 });
 
@@ -58,10 +58,10 @@ const Projects = () => {
           ))}
         </InnerPadding>
 
-        <div className='extras mt-40px md:mt-60px'>
-          <InnerPadding className={'md:px-12px lg:px-[32px] xl:px-[44px]'}>
+        <div className='extras mt-40px md:mt-60px lg:mt-80px 2xl:mt-[96px]'>
+          <InnerPadding className={'xl:px-[44px]'}>
             <m.h3
-              className='mb-20px text-center font-nunito text-sm-4xl font-700 text-slate-500 lg:text-md-4xl'
+              className='mb-20px text-center font-nunito text-sm-4xl font-700 text-slate-500 md:mb-28px lg:mb-36px lg:text-md-4xl'
               initial={{ opacity: 0, translateY: '15px' }}
               whileInView={{ opacity: 1, translateY: 0 }}
               exit={{ opacity: 0, translateY: '-15px' }}
@@ -69,7 +69,7 @@ const Projects = () => {
             >
               Codepen Projects
             </m.h3>
-            <div className='grid-container grid grid-cols-1 gap-24px md:grid-cols-2 lg:grid-cols-4 '>
+            <div className='grid-container grid grid-cols-1 gap-24px sm:gap-32px md:grid-cols-2 md:gap-48px xl:grid-cols-4 xl:gap-24px 2xl:gap-32px'>
               {codepenProjects.map((pen, index) => (
                 <CodepenProjects key={index} pen={pen} />
               ))}
@@ -77,11 +77,11 @@ const Projects = () => {
           </InnerPadding>
         </div>
 
-        <div className='ui-designs mt-60px'>
+        <div className='ui-designs mt-40px md:mt-60px lg:mt-80px 2xl:mt-[96px]'>
           <InnerPadding>
             <div className='text-container text-center'>
               <m.h3
-                className='mb-12px font-nunito text-sm-4xl font-700 text-slate-500 md:text-md-4xl lg:text-lg-4xl'
+                className='mb-12px font-nunito text-sm-4xl font-700 text-slate-700 md:text-md-4xl lg:text-lg-4xl'
                 initial={{ opacity: 0, translateY: '15px' }}
                 whileInView={{ opacity: 1, translateY: 0 }}
                 exit={{ opacity: 0, translateY: '-15px' }}
@@ -90,7 +90,7 @@ const Projects = () => {
                 UI Designs.
               </m.h3>
               <m.p
-                className='mb-20px font-lexendDeca text-sm font-400 tracking-wide text-slate-500'
+                className='mb-20px text-center font-lexendDeca text-sm font-400 tracking-wide text-slate-500 md:px-40px md:text-base lg:px-72px 2xl:px-[100px]'
                 initial={{ opacity: 0, translateY: '15px' }}
                 whileInView={{ opacity: 1, translateY: 0 }}
                 exit={{ opacity: 0, translateY: '-15px' }}

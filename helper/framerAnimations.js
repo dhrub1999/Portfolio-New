@@ -105,3 +105,8 @@ export const iconVariants = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0 },
 };
+
+export const linkVariants = {
+  hidden: { opacity: 0, x: 20 },
+  show: { opacity: 1, x: 0 },
+}

@@ -1,19 +1,17 @@
 'use client';
 import React from 'react';
-import { easeIn, motion as m } from 'framer-motion';
 
 import Button from '@/components/Button';
 import InnerPadding from '@/layouts/InnerPadding';
 import { homeContainer } from '../helper/content';
 import HeroSvg from '@/components/HeroSvg';
 import PageWrapper from '@/components/PageWrapper';
-import { textContainer, paragraph, titles } from '@/helper/framerAnimations';
 
 export default function Home() {
   return (
     <PageWrapper>
-      <section>
-        <div className='large-padding-block-container'>
+      <section className='relative grid min-h-[100vh] place-items-center'>
+        <div className='large-padding-block-container relative'>
           <InnerPadding>
             <div className='content flex flex-col-reverse items-center gap-20px md:flex-row'>
               <div className='hero-content flex flex-col justify-center gap-40px md:items-start'>
@@ -21,7 +19,7 @@ export default function Home() {
                   <h4 className='mb-4px font-lexendDeca text-sm font-500 capitalize text-secondary md:text-left md:text-base'>
                     {homeContainer['special-text']}
                   </h4>
-                  <h1 className='font-nunito text-sm-5xl font-black text-gray-700 sm:max-w-[70vw] sm:text-sm-6xl md:text-md-5xl xl:text-lg-6xl'>
+                  <h1 className='font-nunito text-sm-5xl font-black text-gray-700 sm:max-w-[70vw] sm:text-sm-6xl md:text-md-5xl 2xl:text-lg-6xl'>
                     {homeContainer.title}
                   </h1>
                   <p className='max-w-[70vw] font-lexendDeca text-sm font-400 tracking-wide text-gray-600 md:text-base'>

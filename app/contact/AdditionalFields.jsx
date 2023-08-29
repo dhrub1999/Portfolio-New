@@ -4,7 +4,7 @@ const AdditionalFields = ({ reason, formik }) => {
   if (reason === 'New project') {
     return (
       <>
-        <div className='form-control'>
+        <div className='form-control w-full max-w-md'>
           <div className='mb-8px'>
             <label htmlFor='budget' className='text-slate-600'>
               Budget
@@ -29,8 +29,8 @@ const AdditionalFields = ({ reason, formik }) => {
               : ''}
           </span>
         </div>
-        <div className='form-control w-full max-w-md font-lexendDeca text-sm text-slate-600'>
-          <label className='label  justify-start gap-2px' htmlFor='currency'>
+        <div className='form-control w-full max-w-md font-lexendDeca text-sm text-slate-600 '>
+          <label className='label justify-start gap-2px' htmlFor='currency'>
             <span className='label-text text-slate-600'>Your Currency</span>
             <span className='font-sm-xl label-text-alt text-red-600'>*</span>
           </label>

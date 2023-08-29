@@ -23,7 +23,7 @@ const BridgingCards = ({ bridge, num, delay }) => {
       </div>
       <div className='text'>
         <m.h5
-          className='font-nunito text-sm-2xl font-700 text-secondary md:text-md-2xl lg:text-lg-2xl'
+          className='font-nunito text-sm-2xl font-700 text-secondary md:text-md-2xl'
           initial={{ opacity: 0, translateY: '15px' }}
           whileInView={{ opacity: 1, translateY: 0 }}
           exit={{ opacity: 0, translateY: '-15px' }}
@@ -32,7 +32,7 @@ const BridgingCards = ({ bridge, num, delay }) => {
           {num}. {bridge?.title}
         </m.h5>
         <m.p
-          className='mt-4px font-lexendDeca text-sm text-slate-500 md:text-base lg:mt-8px'
+          className='mt-4px font-lexendDeca text-sm text-slate-500 md:mt-8px md:text-base lg:mt-12px'
           initial={{ opacity: 0, translateY: '15px' }}
           whileInView={{ opacity: 1, translateY: 0 }}
           exit={{ opacity: 0, translateY: '-15px' }}

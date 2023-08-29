@@ -14,10 +14,8 @@ const UIDesignGrid = ({ figmaDrafts }) => {
           transition={{ duration: 0.3, delay: 0.2 * index, type: 'tween' }}
           className={`shadow-lg ${
             index % 3 === 0
-              ? 'col-span-2 md:col-span-4 md:aspect-[19/10.5] lg:col-span-4'
-              : (index + 1) % 3 === 0
-              ? `md:col-start-3 md:row-start-${index} md:aspect-[9/20]`
-              : `col-span-1 md:col-start-2 md:aspect-[9/20]`
+              ? 'col-span-2 md:col-span-4 md:aspect-[19/9.5] lg:col-span-4'
+              : 'md:row-start-2'
           }`}
         >
           {/* <img

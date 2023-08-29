@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { motion as m } from 'framer-motion';
 
 import ProfileImg from './ProfileImg';
@@ -9,7 +10,7 @@ import { myBio } from '../../helper/content';
 import BioSection from './BioSection';
 import LottiePlayer from '@/components/LottiePlayer';
 import PageWrapper from '@/components/PageWrapper';
-import ToolkitGrid from './ToolkitGrid';
+const ToolkitGrid = dynamic(() => import('./ToolkitGrid'), { ssr: false });
 
 const About = () => {
   const [translateX, setTranslateX] = useState(0);
@@ -31,9 +32,9 @@ const About = () => {
 
   return (
     <PageWrapper>
-      <section className='large-padding-block-container'>
+      <section className='large-padding-block-container relative'>
         <InnerPadding>
-          <div className='about-landing-container flex flex-col items-center justify-center md:flex-row-reverse md:items-center md:justify-between'>
+          <div className='about-landing-container flex flex-col items-center justify-center md:flex-row-reverse md:items-center md:justify-between md:gap-12px lg:gap-32px xl:gap-40px'>
             <div className='clipContainer img-background relative  aspect-square  max-w-[330px] rounded-md bg-slate-200 shadow-inner ring-offset-2 lg:max-w-[450px]'>
               <ProfileImg />
             </div>
@@ -78,7 +79,7 @@ const About = () => {
               <div className='md:self-center'>
                 <LottiePlayer
                   src={'/lottie-animations/about-growth.json'}
-                  className='h-auto'
+                  className='h-full'
                 />
               </div>
               <BioSection

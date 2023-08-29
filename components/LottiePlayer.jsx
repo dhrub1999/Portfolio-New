@@ -12,7 +12,7 @@ const LottiePlayer = ({ src, className }) => {
       loop={true}
       controls={true}
       src={src}
-      className={`${className} w-full max-w-[400px]`}
+      className={`${className} w-full max-w-[400px] lg:min-w-full lg:max-w-[550px]`}
       speed={1}
     ></Player>
   );
