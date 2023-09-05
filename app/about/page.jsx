@@ -13,29 +13,12 @@ import PageWrapper from '@/components/PageWrapper';
 const ToolkitGrid = dynamic(() => import('./ToolkitGrid'), { ssr: false });
 
 const About = () => {
-  const [translateX, setTranslateX] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPos = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const docHeight = document.body.scrollHeight;
-      const newTranslateX = (scrollPos / (docHeight - windowHeight)) * 5;
-      setTranslateX(newTranslateX);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <PageWrapper>
-      <section className='large-padding-block-container relative'>
+      <section className='large-padding-block-container w-screen'>
         <InnerPadding>
-          <div className='about-landing-container flex flex-col items-center justify-center md:flex-row-reverse md:items-center md:justify-between md:gap-12px lg:gap-32px xl:gap-40px'>
-            <div className='clipContainer img-background relative  aspect-square  max-w-[330px] rounded-md bg-slate-200 shadow-inner ring-offset-2 lg:max-w-[450px]'>
+          <div className='relative flex flex-col items-center justify-center md:flex-row-reverse md:items-center md:justify-between md:gap-12px lg:gap-32px xl:gap-40px'>
+            <div className='img-background relative  aspect-square  max-w-[330px] rounded-md bg-slate-200 shadow-inner ring-offset-2 lg:max-w-[450px]'>
               <ProfileImg />
             </div>
             <div className='left md:w-[50%]'>
@@ -77,15 +60,12 @@ const About = () => {
               <BioSection title={myBio[1]?.title} info={myBio[1]?.info} />
               <BioSection title={myBio[2]?.title} info={myBio[2]?.info} />
               <div className='md:self-center'>
-                <LottiePlayer
-                  src={'/lottie-animations/about-growth.json'}
-                  className='h-full'
-                />
+                <LottiePlayer src={'/lottie-animations/about-growth.json'} />
               </div>
               <BioSection
                 title={myBio[3]?.title}
                 info={myBio[3]?.info}
-                className={'-mt-32px md:mt-0'}
+                className={'-mt-32px self-center md:mt-0'}
               />
               <BioSection title={myBio[4]?.title} info={myBio[4]?.info} />
               <BioSection
@@ -113,7 +93,7 @@ const About = () => {
               My Toolkits
             </m.h3>
             <m.p
-              className='mb-20px font-lexendDeca text-sm font-400 text-slate-500'
+              className='lg:40px mb-20px font-lexendDeca text-sm font-400 text-slate-500 md:mb-32px md:text-base'
               initial={{ opacity: 0, translateY: '-15px' }}
               whileInView={{ opacity: 1, translateY: 0 }}
               exit={{ opacity: 0, translateY: '-15px' }}

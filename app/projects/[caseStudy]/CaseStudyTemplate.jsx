@@ -149,7 +149,7 @@ const CaseStudyTemplate = ({ project }) => {
           </m.div>
         </div>
         <div className='relative max-h-[28rem] max-w-full md:aspect-video'>
-          <Image loading='lazy' src={project?.img2} fill alt={project.name} />
+          <Image loading='lazy' src={project?.img2} fill alt={project?.name} />
         </div>
         <div className='relative flex flex-col gap-32px lg:gap-48px'>
           <m.div variants={container} initial='hidden' whileInView='show'>

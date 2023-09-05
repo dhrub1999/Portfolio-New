@@ -10,11 +10,11 @@ import PageWrapper from '@/components/PageWrapper';
 export default function Home() {
   return (
     <PageWrapper>
-      <section className='relative grid min-h-[100vh] place-items-center'>
+      <section className='relative'>
         <div className='large-padding-block-container relative'>
           <InnerPadding>
-            <div className='content flex flex-col-reverse items-center gap-20px md:flex-row'>
-              <div className='hero-content flex flex-col justify-center gap-40px md:items-start'>
+            <div className='content flex flex-col-reverse items-center gap-20px md:flex-row md:justify-between'>
+              <div className='hero-content flex flex-col justify-center gap-40px md:max-w-[50%] md:items-start'>
                 <div className='text-container flex flex-col items-center gap-16px text-center md:items-start md:text-left'>
                   <h4 className='mb-4px font-lexendDeca text-sm font-500 capitalize text-secondary md:text-left md:text-base'>
                     {homeContainer['special-text']}

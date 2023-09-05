@@ -5,11 +5,7 @@ import dynamic from 'next/dynamic';
 import LottiePlayer from '@/components/LottiePlayer';
 import PageWrapper from '@/components/PageWrapper';
 import InnerPadding from '@/layouts/InnerPadding';
-import FormSkeleton from '../skeletons/FormSkeleton';
-const Form = dynamic(() => import('./Form'), {
-  ssr: false,
-  loading: () => <FormSkeleton />,
-});
+import Form from './Form';
 
 const Contact = () => {
   return (

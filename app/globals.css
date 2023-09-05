@@ -4,22 +4,11 @@
 
 body {
   min-height: 100vh;
+  width: 100%;
 }
 
 .large-padding-block-container {
   padding-block: min(3.5rem, 15vh);
-}
-
-.large-padding-block-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.01);
-  backdrop-filter: blur(70px);
-  z-index: -1;
 }
 
 .circle {
@@ -88,14 +77,3 @@ body {
     0% 20%
   );
 } */
-
-.overlay::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 2;
-}

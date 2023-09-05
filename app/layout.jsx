@@ -3,9 +3,10 @@ import { Nunito_Sans, Kalam, Lexend_Deca } from 'next/font/google';
 import Navbar from '@/layouts/Navbar';
 import './globals.css';
 import dynamic from 'next/dynamic';
-const Footer = dynamic(() => import('@/layouts/Footer'), {
-  ssr: false,
-});
+import Footer from '@/layouts/Footer';
+// const Footer = dynamic(() => import('@/layouts/Footer'), {
+//   ssr: false,
+// });
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
@@ -39,7 +40,7 @@ export default function RootLayout({ children }) {
       data-theme='lofi'
       className={`${nunitoSans.variable} ${kalam.variable} ${lexendDeca.variable}`}
     >
-      <body className='bg-neutral-20 relative min-h-[100vh] overflow-x-hidden'>
+      <body className='bg-neutral-20 relative overflow-x-hidden'>
         <Navbar />
         {children}
         <Footer />

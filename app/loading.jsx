@@ -3,7 +3,7 @@ import React from 'react';
 
 const HeroSkeleton = () => {
   return (
-    <InnerPadding className='large-padding-block-container relative flex h-[80vh] w-full flex-col-reverse items-center gap-24px bg-slate-100 md:flex-row md:items-center md:justify-between'>
+    <InnerPadding className='large-padding-block-container relative flex h-[90vh] w-full flex-col-reverse items-center gap-24px bg-slate-100 md:flex-row md:items-center md:justify-between'>
       <div className='flex min-w-full flex-col items-center md:w-[50%] md:min-w-0 md:max-w-md md:items-start'>
         <div className='grid w-full gap-12px'>
           <div className='h-20px min-w-full rounded-full bg-slate-300 md:h-28px'></div>

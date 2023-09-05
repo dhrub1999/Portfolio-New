@@ -72,7 +72,7 @@ export const projects = [
     problemStatement:
       'Many individuals struggle with keeping track of their expenses and understanding where their money is being spent. Traditional methods of expense tracking, such as manual record-keeping or using complex financial software, can be time-consuming and overwhelming. There is a need for a user-friendly solution that simplifies the process of expense tracking and provides clear visualizations to help users understand their spending patterns.',
     languageUsed:
-      'The Expense Tracker project is developed using ReactJs, a popular JavaScript library for building user interfaces.',
+      'The Expense Tracker project is developed using ReactJs, a popular JavaScript library for building user interfaces, utilizing its different hooks and components to control the states and show user the appropriate data. CSS was used for styling the project.',
     solution:
       'The Expense Tracker website provides a straightforward solution to the problem of expense tracking. By leveraging the power of ReactJs, the project offers a responsive and interactive user interface that is easy to navigate. The use of React hooks, specifically useState and useEffect, enables efficient state management and data fetching.',
     features: {
@@ -343,7 +343,7 @@ export const faqSection = [
     id: 4,
     question: 'How do you handle revisions and changes during the project?',
     answer:
-      'We value your input. We provide a structured revision process, allowing you to review and request changes at specific milestones, ensuring your vision is captured accurately.',
+      'I value your input. I provide a structured revision process, allowing you to review and request changes at specific milestones, ensuring your vision is captured accurately.',
   },
   {
     id: 5,

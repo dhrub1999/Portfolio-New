@@ -8,6 +8,7 @@ import { projects, codepenProjects, figmaDrafts } from '@/helper/content';
 import InnerPadding from '@/layouts/InnerPadding';
 import LottiePlayer from '@/components/LottiePlayer';
 import PageWrapper from '@/components/PageWrapper';
+import { createClient } from 'next-sanity';
 const CodepenProjects = dynamic(() => import('./CodepenProjects'), {
   ssr: false,
 });
@@ -18,7 +19,8 @@ const ProjectCard = dynamic(() => import('./ProjectCard'), {
   ssr: false,
 });
 
-const Projects = () => {
+const Projects = ({}) => {
+  // console.log(latestProjects);
   return (
     <PageWrapper>
       <div className='mb-40px'>
@@ -53,9 +55,12 @@ const Projects = () => {
         </div>
 
         <InnerPadding className='grid grid-cols-1 gap-20px sm:gap-32px md:mt-20px md:grid-cols-2 md:gap-48px lg:gap-60px xl:gap-72px'>
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
+          {projects
+            .slice()
+            .reverse()
+            .map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
         </InnerPadding>
 
         <div className='extras mt-40px md:mt-60px lg:mt-80px 2xl:mt-[96px]'>
@@ -133,3 +138,19 @@ const Projects = () => {
 };
 
 export default Projects;
+
+// export async function getServerSideProps() {
+//   const client = createClient({
+//     projectId: "",
+//     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+//     useCdn: true,
+//   });
+
+//   const query = '*[_type == "projects"]';
+//   const latestProjects = await client.fetch(query);
+//   return {
+//     props: {
+//       latestProjects,
+//     },
+//   };
+// }
