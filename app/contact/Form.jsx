@@ -3,15 +3,19 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
+import { useForm } from '@formspree/react';
 
 import { formControl, textFields } from '@/helper/framerAnimations';
-import dynamic from 'next/dynamic';
 
 const AdditionalFields = dynamic(() => import('./AdditionalFields'), {
   ssr: false,
 });
 
 const Form = () => {
+  const [state, handleSubmit] = useForm('xbjvkrwg');
+  if(state.succeeded) {
+  }
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -46,8 +50,6 @@ const Form = () => {
     }),
   });
 
-  // console.log(formik.values);
-
   return (
     <div className='form-section mt-12px grid w-full place-items-center rounded-xl bg-slate-100 p-24px shadow-md md:mt-0 md:px-48px md:py-24px lg:mx-60px lg:py-40px'>
       <div className='upper'></div>
@@ -56,7 +58,7 @@ const Form = () => {
         initial='hidden'
         whileInView='show'
         exit='exit'
-        onSubmit={formik.handleSubmit}
+        onSubmit={handleSubmit}
         className='flex w-full flex-col items-center gap-24px font-lexendDeca text-sm font-400 text-slate-500'
       >
         <motion.div
@@ -188,10 +190,15 @@ const Form = () => {
         </motion.div>
 
         <button
+          disabled={state.submitting}
           type='submit'
           className='btn btn-primary w-full max-w-md rounded normal-case text-slate-100'
         >
-          Send
+          {state.submitting ? (
+            <span className='loading loading-spinner'>Sending</span>
+          ) : (
+            'Send'
+          )}
         </button>
       </motion.form>
     </div>

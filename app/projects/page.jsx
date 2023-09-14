@@ -4,11 +4,13 @@ import Link from 'next/link';
 import { motion as m } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
-import { projects, codepenProjects, figmaDrafts } from '@/helper/content';
+import { client } from '@/helper/configSanity';
+import { figmaDrafts } from '@/helper/content';
 import InnerPadding from '@/layouts/InnerPadding';
 import LottiePlayer from '@/components/LottiePlayer';
 import PageWrapper from '@/components/PageWrapper';
-import { createClient } from 'next-sanity';
+import Testimonials from '@/components/Testimonials';
+
 const CodepenProjects = dynamic(() => import('./CodepenProjects'), {
   ssr: false,
 });
@@ -19,8 +21,23 @@ const ProjectCard = dynamic(() => import('./ProjectCard'), {
   ssr: false,
 });
 
-const Projects = ({}) => {
-  // console.log(latestProjects);
+async function getProjectsData() {
+  const query = '*[_type == "projects"]';
+  const latestProjects = await client.fetch(query);
+  return latestProjects;
+}
+
+async function getCodepenProjectsData() {
+  const query = '*[_type == "codepens"]';
+  const codepenProjects = await client.fetch(query);
+  return codepenProjects;
+}
+
+const Projects = async () => {
+  const myProjects = await getProjectsData();
+  // console.log(myProjects[1]);
+  const codepenProjects = await getCodepenProjectsData();
+
   return (
     <PageWrapper>
       <div className='mb-40px'>
@@ -55,7 +72,7 @@ const Projects = ({}) => {
         </div>
 
         <InnerPadding className='grid grid-cols-1 gap-20px sm:gap-32px md:mt-20px md:grid-cols-2 md:gap-48px lg:gap-60px xl:gap-72px'>
-          {projects
+          {myProjects
             .slice()
             .reverse()
             .map((project, index) => (
@@ -132,25 +149,27 @@ const Projects = ({}) => {
             </div>
           </InnerPadding>
         </div>
+
+        <div className='testimonial-section mt-40px md:mt-60px lg:mt-80px'>
+          <InnerPadding>
+            <m.h3
+              className='mb-12px mt-20px text-center font-nunito text-sm-4xl font-700 text-slate-700 md:text-md-4xl lg:text-lg-4xl'
+              initial={{ opacity: 0, translateY: '15px' }}
+              whileInView={{ opacity: 1, translateY: 0 }}
+              exit={{ opacity: 0, translateY: '-15px' }}
+              transition={{ duration: 0.2, ease: 'easeIn' }}
+            >
+              I have some fans.
+              <Testimonials project={myProjects} />
+              <p className='mt-12px font-lexendDeca text-sm font-400 text-slate-400 md:mt-16px md:text-base lg:mt-20px'>
+                Slide to see more.
+              </p>
+            </m.h3>
+          </InnerPadding>
+        </div>
       </div>
     </PageWrapper>
   );
 };
 
 export default Projects;
-
-// export async function getServerSideProps() {
-//   const client = createClient({
-//     projectId: "",
-//     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-//     useCdn: true,
-//   });
-
-//   const query = '*[_type == "projects"]';
-//   const latestProjects = await client.fetch(query);
-//   return {
-//     props: {
-//       latestProjects,
-//     },
-//   };
-// }

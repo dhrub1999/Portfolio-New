@@ -1,9 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { motion as m } from 'framer-motion';
+import { useNextSanityImage } from 'next-sanity-image';
+
+import { client } from '@/helper/configSanity';
 
 const ProjectCard = ({ project }) => {
+  const mainImgProps = useNextSanityImage(client, project?.mainImg);
+
   return (
     <div className='card w-full overflow-hidden bg-base-100 shadow-sm md:shadow-md'>
       <m.div
@@ -14,7 +19,7 @@ const ProjectCard = ({ project }) => {
         transition={{ duration: 0.5 }}
       >
         {/* <img src={project?.img1} alt={project?.name} /> */}
-        <Image src={project?.img1} alt={project?.name} fill />
+        <Image {...mainImgProps} alt={project?.slug.current} layout='fill' />
       </m.div>
       <div className='card-body'>
         <m.h4
@@ -24,7 +29,7 @@ const ProjectCard = ({ project }) => {
           exit={{ opacity: 0, translateY: '-15px' }}
           transition={{ duration: 0.3, ease: 'easeIn' }}
         >
-          {project?.name}
+          {project?.title}
         </m.h4>
         <m.p
           className='truncate-para font-lexendDeca text-sm font-400 tracking-wide text-slate-500 md:text-base'
@@ -44,11 +49,11 @@ const ProjectCard = ({ project }) => {
         >
           Tech stack:{' '}
           <span className='font-kalam text-sm text-slate-500 md:text-base'>
-            {project?.languages.join(', ')}
+            {project?.techStack.join(', ')}
           </span>
         </m.p>
         <div className='card-actions mt-20px justify-start overflow-y-hidden'>
-          <Link href={`/projects/${project?.id}`}>
+          <Link href={`/projects/${project?.slug.current}`}>
             <m.button
               className='btn btn-primary btn-md rounded-sm font-lexendDeca capitalize text-base-200 hover:text-base-content'
               initial={{ opacity: 0, translateY: '15px' }}

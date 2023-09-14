@@ -15,7 +15,7 @@ const ToolkitGrid = dynamic(() => import('./ToolkitGrid'), { ssr: false });
 const About = () => {
   return (
     <PageWrapper>
-      <section className='large-padding-block-container w-screen'>
+      <section className='large-padding-block-container w-full'>
         <InnerPadding>
           <div className='relative flex flex-col items-center justify-center md:flex-row-reverse md:items-center md:justify-between md:gap-12px lg:gap-32px xl:gap-40px'>
             <div className='img-background relative  aspect-square  max-w-[330px] rounded-md bg-slate-200 shadow-inner ring-offset-2 lg:max-w-[450px]'>

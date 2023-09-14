@@ -6,11 +6,7 @@ import { motion as m } from 'framer-motion';
 
 import InitialPadding from './InitialPadding';
 import Logo from '@/components/icons/Logo';
-import {
-  iconVariants,
-  linkVariants,
-  staggerVariants,
-} from '@/helper/framerAnimations';
+import { iconVariants, staggerVariants } from '@/helper/framerAnimations';
 
 const Footer = () => {
   return (
@@ -25,7 +21,7 @@ const Footer = () => {
           </p>
         </div>
         <div className='social-links-container h-full md:flex md:items-center md:gap-24px'>
-          <p className='mb-12px font-lexendDeca text-sm text-slate-400 md:mb-0 md:text-base'>
+          <p className='mb-12px text-center font-lexendDeca text-sm text-slate-400 md:mb-0 md:text-left md:text-base'>
             Find me on
           </p>
           <m.div

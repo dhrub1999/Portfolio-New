@@ -1,37 +1,47 @@
+'use client';
 import React from 'react';
 import Image from 'next/image';
 import { motion as m } from 'framer-motion';
+import { useNextSanityImage } from 'next-sanity-image';
 
 import InnerPadding from '@/layouts/InnerPadding';
 import Button from '@/components/Button';
 import { container, items } from '@/helper/framerAnimations';
+import { client } from '@/helper/configSanity';
+import RichTextToParagraph from '@/components/RichTextToParagraph';
+import ClientReview from '@/components/ClientReview';
 
 const CaseStudyTemplate = ({ project }) => {
+  const mainImgProps = useNextSanityImage(client, project?.mainImg);
+  const solutionImgProps = useNextSanityImage(client, project?.solutionImg);
+  const featureImgProps = useNextSanityImage(client, project?.featureImg);
+  console.log(project.clientRole);
+
   return (
     <main className='relative'>
       <div className='hero-section relative flex h-full w-full flex-col-reverse justify-center gap-48px md:min-h-[80vh]'>
         <div className='left relative md:z-[10] md:grid md:h-full md:w-full md:place-items-center'>
           <InnerPadding className={''}>
             <h2 className='font-nunito text-sm-5xl font-800 text-slate-800 md:text-md-5xl md:text-slate-200 lg:text-lg-5xl'>
-              {project?.name}
+              {project?.title}
             </h2>
             <p className='mt-8px font-lexendDeca text-sm font-400 text-slate-600 md:text-base md:text-slate-400 lg:mt-12px'>
               {project?.description}
             </p>
             <div className='btn-container mt-32px flex gap-32px lg:gap-48px'>
-              {project?.link ? (
+              {project?.websiteLink ? (
                 <Button
                   variant={'primary'}
                   className='hover:text-slate-800'
-                  href={project?.link}
+                  href={project?.websiteLink}
                 >
                   Website
                 </Button>
               ) : (
                 ''
               )}
-              {project?.repo ? (
-                <Button href={project?.repo} variant={'secondary'}>
+              {project?.repoLink ? (
+                <Button href={project?.repoLink} variant={'secondary'}>
                   Repository
                 </Button>
               ) : (
@@ -45,13 +55,14 @@ const CaseStudyTemplate = ({ project }) => {
           </InnerPadding>
         </div>
 
-        <div className='relative z-10 aspect-video h-[40vh] max-h-[28rem] w-full blur-0 after:bg-none  after:blur-0 md:absolute md:left-0 md:top-0 md:-z-10 md:h-full md:max-h-[90vh] md:blur-sm md:after:absolute md:after:left-0 md:after:top-0 md:after:z-[1] md:after:h-full md:after:w-full md:after:bg-[rgba(0,0,0,0.8)] md:after:content-[""]'>
+        <div className='relative z-10 aspect-video w-full blur-0 after:bg-none after:blur-0 md:absolute md:left-0 md:top-0 md:-z-10 md:h-full md:max-h-[90vh] md:blur-sm md:after:absolute md:after:left-0 md:after:top-0 md:after:z-[1] md:after:h-full md:after:w-full md:after:bg-[rgba(0,0,0,0.8)] md:after:content-[""]'>
           <Image
-            alt={project?.name}
-            src={project?.img1}
-            className='object-cover object-center'
-            fill
+            alt={project?.title}
+            // {...mainImgProps}
+            src={mainImgProps?.src}
+            layout='fill'
             priority
+            className='object-cover object-top shadow-lg lg:rounded-xl'
           />
         </div>
       </div>
@@ -76,7 +87,7 @@ const CaseStudyTemplate = ({ project }) => {
               className='text-sm text-slate-500 md:text-base'
               variants={items}
             >
-              {project?.industry == '' ? 'N/A' : project?.industry}
+              {project?.companyName == undefined ? 'N/A' : project?.companyName}
             </m.p>
           </m.div>
           <m.div
@@ -85,14 +96,19 @@ const CaseStudyTemplate = ({ project }) => {
             initial='hidden'
             whileInView='show'
           >
-            <m.p className='text-base font-500 text-secondary' variants={items}>
+            <m.p
+              className='text-base font-500 text-secondary lg:text-lg'
+              variants={items}
+            >
               Location
             </m.p>
             <m.p
               className='text-sm text-slate-500 md:text-base'
               variants={items}
             >
-              {project?.location == '' ? 'N/A' : project?.location}
+              {project?.companyLocation == undefined
+                ? 'N/A'
+                : project?.companyLocation}
             </m.p>
           </m.div>
           <m.div
@@ -102,14 +118,19 @@ const CaseStudyTemplate = ({ project }) => {
             whileInView='show'
             exit='exit'
           >
-            <m.p variants={items} className='text-base font-500 text-secondary'>
+            <m.p
+              variants={items}
+              className='text-base font-500 text-secondary lg:text-lg'
+            >
               Website
             </m.p>
             <m.p
               variants={items}
               className='text-sm text-slate-500 md:text-base'
             >
-              {project?.companyWebsite == '' ? 'N/A' : project?.companyWebsite}
+              {project?.companyWebsite == undefined
+                ? 'N/A'
+                : project?.companyWebsite}
             </m.p>
           </m.div>
         </div>
@@ -148,8 +169,14 @@ const CaseStudyTemplate = ({ project }) => {
             </m.p>
           </m.div>
         </div>
-        <div className='relative max-h-[28rem] max-w-full md:aspect-video'>
-          <Image loading='lazy' src={project?.img2} fill alt={project?.name} />
+        <div className='relative aspect-video max-h-[32rem] max-w-full'>
+          <Image
+            loading='lazy'
+            src={solutionImgProps?.src}
+            layout='fill'
+            alt={project?.title}
+            className='rounded-xl object-cover object-top shadow-md'
+          />
         </div>
         <div className='relative flex flex-col gap-32px lg:gap-48px'>
           <m.div variants={container} initial='hidden' whileInView='show'>
@@ -159,12 +186,10 @@ const CaseStudyTemplate = ({ project }) => {
             >
               Language Used
             </m.h4>
-            <m.p
+            <RichTextToParagraph
               variants={items}
-              className='mt-8px text-sm text-slate-500 md:text-base'
-            >
-              {project?.languageUsed}
-            </m.p>
+              richText={project?.languageUsed}
+            />
           </m.div>
           <m.div variants={container} initial='hidden' whileInView='show'>
             <m.h4
@@ -179,30 +204,27 @@ const CaseStudyTemplate = ({ project }) => {
               initial='initial'
               whileInView='show'
             >
-              {Object.entries(project?.features).map(
-                ([featureName, featureDesc, index]) => (
-                  <m.p
-                    variants={items}
-                    key={index}
-                    className='mt-8px text-sm text-slate-500 md:text-base'
-                  >
-                    <span className=' text-slate-600 underline underline-offset-2'>
-                      {featureName}:
-                    </span>{' '}
-                    {featureDesc}
-                  </m.p>
-                )
-              )}
+              {project?.features.map((feature, index) => (
+                <div
+                  key={index}
+                  className='mt-8px text-sm text-slate-500 md:text-base'
+                >
+                  <span className=' text-slate-600 underline underline-offset-2'>
+                    {feature.featureTitle}:
+                  </span>{' '}
+                  {feature.featureDesc}
+                </div>
+              ))}
             </m.div>
           </m.div>
         </div>
-        <div className='max-w-full] relative aspect-video max-h-[32rem] '>
+        <div className='relative aspect-video max-h-[32rem] max-w-full '>
           <Image
             loading='lazy'
-            src={project?.img3}
-            fill
-            alt={project?.name}
-            className='object-cover object-top'
+            src={featureImgProps?.src}
+            layout='fill'
+            alt={project?.title}
+            className='rounded-xl object-cover object-top shadow-md'
           />
         </div>
         <m.div variants={container} initial='hidden' whileInView='show'>
@@ -212,12 +234,25 @@ const CaseStudyTemplate = ({ project }) => {
           >
             Conclusion
           </m.h4>
-          <m.p
+          <RichTextToParagraph
             variants={items}
-            className='mt-8px text-sm text-slate-500 md:text-base'
+            richText={project?.conclusion}
+          />
+        </m.div>
+
+        <m.div variants={container} initial='hidden' whileInView='show'>
+          <m.h3
+            className='text-center font-nunito text-sm-3xl font-700 text-secondary md:text-md-3xl 2xl:text-lg-3xl'
+            variants={items}
           >
-            {project?.conclusion}
-          </m.p>
+            Visitor's words
+          </m.h3>
+          <ClientReview
+            clientName={project?.clientName}
+            clientProfilePicture={project?.clientProfilePicture}
+            clientReview={project?.clientReview}
+            clientRole={project?.clientRole}
+          />
         </m.div>
       </InnerPadding>
     </main>

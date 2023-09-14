@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { motion as m } from 'framer-motion';
 
 const UIDesignGrid = ({ figmaDrafts }) => {
@@ -12,10 +12,10 @@ const UIDesignGrid = ({ figmaDrafts }) => {
           whileInView={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3, delay: 0.2 * index, type: 'tween' }}
-          className={`shadow-lg ${
+          className={`relative shadow-lg ${
             index % 3 === 0
-              ? 'col-span-2 md:col-span-4 md:aspect-[19/9.5] lg:col-span-4'
-              : 'md:row-start-2'
+              ? 'col-span-2 h-[48vw] max-h-[380px] w-full md:col-span-4 md:aspect-[19/9.5] md:max-h-[450px] lg:col-span-4 lg:max-h-[500px] xl:max-h-[600px]'
+              : 'aspect-[9/19] md:row-start-2'
           }`}
         >
           {/* <img
@@ -25,10 +25,9 @@ const UIDesignGrid = ({ figmaDrafts }) => {
           /> */}
           <Image
             src={`/${draft?.imgSrc}`}
-            className='h-full w-full rounded-md object-cover object-top'
+            className='h-full w-full rounded-md'
             alt={draft?.title}
-            height={2000}
-            width={2000}
+            layout='fill'
             loading='lazy'
           />
         </m.div>

@@ -16,13 +16,7 @@ import {
   SiReact,
   SiVite,
 } from 'react-icons/si';
-import {
-  FaNpm,
-  FaNodeJs,
-  FaHtml5,
-  FaCss3,
-  FaSass,
-} from 'react-icons/fa';
+import { FaNpm, FaNodeJs, FaHtml5, FaCss3, FaSass } from 'react-icons/fa';
 import { RiTeamFill } from 'react-icons/ri';
 import { TbBrandFramerMotion, TbBrandVscode } from 'react-icons/tb';
 
@@ -70,7 +64,7 @@ const ToolkitGrid = () => {
   return (
     <div>
       <motion.div
-        className='grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6'
+        className='grid w-full grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 md:gap-3 lg:grid-cols-6 lg:gap-4 xl:gap-6'
         variants={staggerVariants}
         initial='hidden'
         whileInView='show'
@@ -78,7 +72,7 @@ const ToolkitGrid = () => {
         {icons.map((item, index) => (
           <motion.div
             key={index}
-            className='flex flex-col items-center rounded-md bg-slate-100 p-24px shadow-sm'
+            className='flex flex-col items-center rounded-md bg-slate-100 px-8px py-16px shadow-sm'
             variants={iconVariants}
           >
             {React.createElement(item.icon, {

@@ -2,8 +2,14 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion as m } from 'framer-motion';
+import { useNextSanityImage } from 'next-sanity-image';
+
+import RichTextToParagraph from '@/components/RichTextToParagraph';
+import { client } from '@/helper/configSanity';
 
 const CodepenProjects = ({ pen }) => {
+  const codepenProjectImgProps = useNextSanityImage(client, pen?.projectVisual);
+
   return (
     <m.div
       className='card w-full rounded-md bg-base-100 shadow-sm xl:shadow-md'
@@ -20,12 +26,10 @@ const CodepenProjects = ({ pen }) => {
       >
         {/* <img src={pen?.gif} alt={pen?.title} className='rounded-xl' /> */}
         <Image
-          src={pen?.gif}
+          src={codepenProjectImgProps?.src}
           alt={pen?.title}
           loading={'lazy'}
           className='rounded-md object-cover object-center'
-          objectFit='cover'
-          objectPosition='top'
           layout='fill'
         />
       </m.div>
@@ -37,7 +41,7 @@ const CodepenProjects = ({ pen }) => {
           exit={{ opacity: 0, translateY: '-15px' }}
           transition={{ duration: 0.2, ease: 'easeIn' }}
         >
-          {pen?.title}
+          {pen?.projectTitle}
         </m.h4>
         <m.p
           className='font-lexendDeca text-sm font-400 text-slate-500 md:text-base'
@@ -46,10 +50,11 @@ const CodepenProjects = ({ pen }) => {
           exit={{ opacity: 0, translateY: '-15px' }}
           transition={{ duration: 0.2, delay: 0.2, ease: 'easeIn' }}
         >
-          {pen?.desc}
+          {/* {pen?.projectDescription} */}
+          <RichTextToParagraph richText={pen?.description} />
         </m.p>
         <div className='card-actions mt-20px overflow-hidden'>
-          <Link href={pen?.link} target='_blank'>
+          <Link href={pen?.projectLink} target='_blank'>
             <m.button
               className='btn btn-secondary rounded font-lexendDeca font-400 capitalize text-slate-200 hover:text-slate-100'
               initial={{ opacity: 0, translateY: '15px' }}
