@@ -19,7 +19,11 @@ const ProjectCard = ({ project }) => {
         transition={{ duration: 0.5 }}
       >
         {/* <img src={project?.img1} alt={project?.name} /> */}
-        <Image {...mainImgProps} alt={project?.slug.current} layout='fill' />
+        <Image
+          {...mainImgProps}
+          alt={project?.slug.current || 'Personal Project'}
+          layout='fill'
+        />
       </m.div>
       <div className='card-body'>
         <m.h4

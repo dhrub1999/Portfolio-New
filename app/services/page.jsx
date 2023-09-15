@@ -40,10 +40,7 @@ const Services = () => {
               </div>
             </div>
             <div className='md:justify-self-end'>
-              <LottiePlayer
-                src='/lottie-animations/services-hero.json'
-                className=''
-              />
+              <LottiePlayer src='/lottie-animations/services-hero.json' />
             </div>
           </div>
           <Bridging bridgingProcess={refinedBridges} />
@@ -74,7 +71,7 @@ const Services = () => {
               exit={{ opacity: 0, translateY: '-15px' }}
               transition={{ duration: 0.2, delay: 0.3, ease: 'easeIn' }}
             >
-              Wasn't this helpful? Click here to{' '}
+              Wasn&rsquo;t this helpful? Click here to{' '}
               <Link
                 className='text-primary transition-colors duration-200 ease-in'
                 href={'mailto:contact.tamalbiswas@gmail.com'}

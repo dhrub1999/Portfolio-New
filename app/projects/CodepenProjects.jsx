@@ -1,6 +1,7 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { motion as m } from 'framer-motion';
 import { useNextSanityImage } from 'next-sanity-image';
 
@@ -27,7 +28,7 @@ const CodepenProjects = ({ pen }) => {
         {/* <img src={pen?.gif} alt={pen?.title} className='rounded-xl' /> */}
         <Image
           src={codepenProjectImgProps?.src}
-          alt={pen?.title}
+          alt={pen?.title || 'codepen project'}
           loading={'lazy'}
           className='rounded-md object-cover object-center'
           layout='fill'

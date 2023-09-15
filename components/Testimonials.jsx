@@ -6,7 +6,7 @@ const Testimonials = ({ project }) => {
     <section>
       <div className='carousel rounded-box w-64 md:w-72 xl:w-96'>
         {project?.map((item, index) => (
-          <div className='carousel-item w-full'>
+          <div key={index} className='carousel-item w-full'>
             <ClientReview
               key={index}
               clientName={item?.name}

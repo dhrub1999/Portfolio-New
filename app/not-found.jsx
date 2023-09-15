@@ -16,11 +16,11 @@ const PageNotFound = () => {
         </div>
         <div className='text-center'>
           <p className='font-lexendDeca text-lg font-500 text-slate-700'>
-            You didn't break the internet, but I can't find what you are looking
+            You didn&rsquo;t break the internet, but I can&rsquo;t find what you are looking
             for.
           </p>
           <p className='mt-8px font-lexendDeca text-sm font-400 text-slate-500 md:mt-12px md:text-base xl:mt-16px'>
-            Let's go back to where we've started!
+            Let&rsquo;s go back to where we&rsquo;ve started!
           </p>
         </div>
         <button className='btn btn-primary btn-md mt-24px font-lexendDeca text-sm font-600 normal-case text-slate-100 xl:btn-lg md:mt-28px md:text-base'>

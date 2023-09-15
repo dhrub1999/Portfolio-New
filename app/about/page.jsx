@@ -24,7 +24,7 @@ const About = () => {
             <div className='left md:w-[50%]'>
               <div className='text-container mt-40px text-center md:mt-0 md:text-left'>
                 <p className='mb-8px font-lexendDeca text-sm text-slate-400 md:text-base'>
-                  Hello! I'm,
+                  Hello! I&rsquo;m,
                 </p>
                 <h2 className='font-kalam text-sm-5xl font-700 text-primary md:text-md-5xl lg:text-lg-5xl'>
                   Tamal Biswas

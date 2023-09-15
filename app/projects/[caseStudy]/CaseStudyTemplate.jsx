@@ -245,7 +245,7 @@ const CaseStudyTemplate = ({ project }) => {
             className='text-center font-nunito text-sm-3xl font-700 text-secondary md:text-md-3xl 2xl:text-lg-3xl'
             variants={items}
           >
-            Visitor's words
+            Visitor&rsquo;s words
           </m.h3>
           <ClientReview
             clientName={project?.clientName}

@@ -13,7 +13,7 @@ const NotFound = () => {
             Project not found!
           </h1>
           <p className='mt-20px font-lexendDeca font-400 text-slate-600'>
-            Let's go back.
+            Let&rsquo;s go back.
           </p>
           <Button href='/projects' variant={'primary'} className='mt-40px'>
             Projects

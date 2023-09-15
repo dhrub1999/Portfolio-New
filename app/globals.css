@@ -58,6 +58,29 @@ body {
   overflow: hidden;
 }
 
+::-webkit-scrollbar {
+  background: #0f97f2;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  padding: 0 2px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: #000;
+  padding: 0 2px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6950ab;
+  border-radius: 10px;
+}
+
 /* .clipContainer::before {
   content: '';
   position: absolute;

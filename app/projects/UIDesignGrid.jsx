@@ -18,15 +18,10 @@ const UIDesignGrid = ({ figmaDrafts }) => {
               : 'aspect-[9/19] md:row-start-2'
           }`}
         >
-          {/* <img
-            src={draft?.imgSrc}
-            className='h-full w-full rounded-md'
-            alt={draft?.title}
-          /> */}
           <Image
             src={`/${draft?.imgSrc}`}
             className='h-full w-full rounded-md'
-            alt={draft?.title}
+            alt={draft?.title || 'Figma Designs'}
             layout='fill'
             loading='lazy'
           />
