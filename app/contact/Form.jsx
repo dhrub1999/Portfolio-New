@@ -14,8 +14,7 @@ const AdditionalFields = dynamic(() => import('./AdditionalFields'), {
 
 const Form = () => {
   const [state, handleSubmit] = useForm('xbjvkrwg');
-  if(state.succeeded) {
-  }
+
   const formik = useFormik({
     initialValues: {
       name: '',

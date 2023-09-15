@@ -2,11 +2,7 @@ import { Nunito_Sans, Kalam, Lexend_Deca } from 'next/font/google';
 
 import Navbar from '@/layouts/Navbar';
 import './globals.css';
-import dynamic from 'next/dynamic';
 import Footer from '@/layouts/Footer';
-// const Footer = dynamic(() => import('@/layouts/Footer'), {
-//   ssr: false,
-// });
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],

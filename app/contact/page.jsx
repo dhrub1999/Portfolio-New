@@ -1,6 +1,5 @@
 'use client';
-import React, { Suspense } from 'react';
-import dynamic from 'next/dynamic';
+import React from 'react';
 
 import LottiePlayer from '@/components/LottiePlayer';
 import PageWrapper from '@/components/PageWrapper';
