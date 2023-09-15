@@ -18,7 +18,6 @@ const ProjectCard = ({ project }) => {
         exit={{ scale: 0 }}
         transition={{ duration: 0.5 }}
       >
-        {/* <img src={project?.img1} alt={project?.name} /> */}
         <Image
           {...mainImgProps}
           alt={project?.slug.current || 'Personal Project'}

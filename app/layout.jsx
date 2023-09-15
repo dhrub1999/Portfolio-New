@@ -27,7 +27,7 @@ const kalam = Kalam({
 export const metadata = {
   title: 'Full-stack Web Developer - Tamal Biswas',
   description:
-    'Welcome to the portfolio of Your Name, a skilled Front-End Web Developer and UI Designer. Explore my projects and services to plan your perfect online presence.',
+    'I can help you build a brand, generate traffic, and grow your audience by building modern, responsive websites for your business.',
 };
 
 export default function RootLayout({ children }) {

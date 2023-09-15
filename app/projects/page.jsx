@@ -35,7 +35,6 @@ async function getCodepenProjectsData() {
 
 const Projects = async () => {
   const myProjects = await getProjectsData();
-  // console.log(myProjects[1]);
   const codepenProjects = await getCodepenProjectsData();
 
   return (
