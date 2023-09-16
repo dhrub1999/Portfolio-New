@@ -1,40 +1,15 @@
-
 # Portfolio Website
 
 Welcome to my portfolio website! This project showcases my skills and projects. It was built using Next.js, Tailwind CSS, Supabase, Sanity, and Framer Motion.
 
-
 ## Table of Contents
 
-- [Getting Started](#getting-started)
 - [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Environment Variables](#environment-variables)
 - [Features](#features)
 - [Learn More](#learn-more)
 
-## Getting started
-
-To run the development server locally, follow these steps:
-
-1. Clone this repository to your local machine.
-2. Navigate to the project's root directory.
-3. Install dependencies using npm, yarn, or pnpm:
-
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-
-4. Start the development server
-    ```bash
-    npm run dev
-    # or
-    yarn dev
-    # or
-    pnpm dev
-
-Your development server should now be running at http://localhost:3000. Open this URL in your web browser to see the website in action.
 ## Technologies Used
 
 This portfolio website is built using a stack of modern web development technologies and tools:
@@ -57,6 +32,34 @@ This portfolio website is built using a stack of modern web development technolo
 
 These technologies, when combined, enable the creation of a visually appealing and functionally robust portfolio website that showcases my skills and projects effectively.
 
+## Getting started
+
+To run the development server locally, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Navigate to the project's root directory.
+3. Install dependencies using npm, yarn, or pnpm:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+
+   ```
+
+4. Start the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+Your development server should now be running at http://localhost:3000. Open this URL in your web browser to see the website in action.
+
 ## Environment Variables
 
 This portfolio website uses environment variables to manage sensitive information and configuration settings. To set up the necessary environment variables, follow these steps:
@@ -72,6 +75,7 @@ This portfolio website uses environment variables to manage sensitive informatio
 
    # Sanity Configuration
    NEXT_PUBLIC_SANITY_PROJECT_ID=<your-sanity-project-id>
+   ```
 
 ## Features
 
@@ -107,7 +111,6 @@ Intuitive navigation ensures that visitors can explore my portfolio with ease, f
 
 These features, combined with the technologies used in this project, create a dynamic and visually appealing portfolio website that effectively showcases my skills and projects.
 
-
 ## Learn More
 
 To further understand the technologies used in this project and learn how to customize this website for your own portfolio, explore the following resources:
@@ -139,6 +142,7 @@ Here's how you can get involved and contribute:
 1. **Reporting Issues**: If you find any issues or have suggestions for improvements, please [open an issue](https://github.com/dhrub1999/Portfolio-New) so that we can track and address them together.
 
 2. **Submitting Pull Requests**: If you have a fix or feature you'd like to contribute, consider submitting a pull request. Follow these steps:
+
    - Fork the repository to your own GitHub account.
    - Clone the repository to your local machine.
    - Create a new branch for your feature or bug fix.
@@ -153,5 +157,3 @@ Here's how you can get involved and contribute:
 Remember to be respectful and considerate of others when contributing. I welcome contributors of all experience levels, and I'm here to help if you have any questions or need guidance.
 
 Let's work together to make this portfolio website an outstanding showcase of skills and creativity! 🚀
-
-
