@@ -81,14 +81,14 @@ const AdditionalFields = ({ reason, formik }) => {
         </div>
 
         <div className='form-control w-full max-w-md font-lexendDeca text-sm text-slate-600'>
-          <label className='label  justify-start gap-2px' htmlFor='jobType'>
-            <span className='label-text text-slate-600'>Job type</span>
+          <label className='label  justify-start gap-2px' htmlFor='jobLocation'>
+            <span className='label-text text-slate-600'>Job location</span>
             <span className='font-sm-xl label-text-alt text-red-600'>*</span>
           </label>
           <select
             className='select select-bordered select-secondary text-sm font-400 text-primary'
-            name='jobType'
-            value={formik.values.jobType}
+            name='jobLocation'
+            value={formik.values.jobLocation}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           >
@@ -97,8 +97,8 @@ const AdditionalFields = ({ reason, formik }) => {
             <option className='text-slate-500'>On-site</option>
           </select>
           <span id='err-msg' className='mt-4px text-red-600'>
-            {formik.touched.jobType && formik.errors.jobType
-              ? formik.errors.jobType
+            {formik.touched.jobLocation && formik.errors.jobLocation
+              ? formik.errors.jobLocation
               : ''}
           </span>
         </div>

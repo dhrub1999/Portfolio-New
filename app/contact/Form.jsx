@@ -4,16 +4,48 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import { useForm } from '@formspree/react';
+import { createClient as supabaseClient } from '@supabase/supabase-js';
 
 import { formControl, textFields } from '@/helper/framerAnimations';
-
 const AdditionalFields = dynamic(() => import('./AdditionalFields'), {
   ssr: false,
 });
 
+const supabase = supabaseClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+);
+
 const Form = () => {
-  const [state, handleSubmit] = useForm('xbjvkrwg');
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (formik.isValid) {
+      try {
+        const { data, error } = await supabase.from('senders').insert([
+          {
+            name: formik.values.name,
+            email: formik.values.email,
+            companyName: formik.values.companyName,
+            reason: formik.values.reason,
+            message: formik.values.message,
+            budget: formik.values.budget,
+            currency: formik.values.currency,
+            jobTitle: formik.values.jobTitle,
+            jobLocation: formik.values.jobLocation,
+          },
+        ]);
+
+        if (error) {
+          alert('Something went wrong!');
+        } else {
+          alert('Your message has been sent!');
+          formik.resetForm();
+        }
+      } catch (error) {
+        alert('Something went wrong!');
+      }
+    }
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -22,10 +54,10 @@ const Form = () => {
       companyName: '',
       reason: 'Appretiation',
       message: '',
-      budget: '',
+      budget: 0,
       currency: '₹ INR',
       jobTitle: 'Front-End Developer',
-      jobType: 'Remote',
+      jobLocation: 'Remote',
     },
 
     validationSchema: Yup.object({
@@ -43,22 +75,22 @@ const Form = () => {
       jobTitle: Yup.string().required(
         'Please select the Job Title from the options.'
       ),
-      jobType: Yup.string().required(
+      jobLocation: Yup.string().required(
         'Please select the Job Type from the options.'
       ),
     }),
   });
 
   return (
-    <div className='form-section mt-12px grid w-full place-items-center rounded-xl bg-slate-100 p-24px shadow-md md:mt-0 md:px-48px md:py-24px lg:mx-60px lg:py-40px'>
-      <div className='upper'></div>
+    <div className='form-section relative mt-12px grid w-full place-items-center rounded-xl bg-slate-100 p-24px shadow-md md:mt-0 md:px-48px md:py-24px lg:mx-60px lg:py-40px'>
       <motion.form
         variants={formControl}
         initial='hidden'
         whileInView='show'
         exit='exit'
-        onSubmit={handleSubmit}
+        onSubmit={onSubmit}
         className='flex w-full flex-col items-center gap-24px font-lexendDeca text-sm font-400 text-slate-500'
+        id='form'
       >
         <motion.div
           className='form-control w-full max-w-md'
@@ -189,15 +221,10 @@ const Form = () => {
         </motion.div>
 
         <button
-          disabled={state.submitting}
           type='submit'
           className='btn btn-primary w-full max-w-md rounded normal-case text-slate-100'
         >
-          {state.submitting ? (
-            <span className='loading loading-spinner'>Sending</span>
-          ) : (
-            'Send'
-          )}
+          Send
         </button>
       </motion.form>
     </div>
