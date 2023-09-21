@@ -139,7 +139,7 @@ By exploring these resources, you'll gain the knowledge and insights needed to m
 
 Here's how you can get involved and contribute:
 
-1. **Reporting Issues**: If you find any issues or have suggestions for improvements, please [open an issue](https://github.com/dhrub1999/Portfolio-New) so that we can track and address them together.
+1. **Reporting Issues**: If you find any issues or have suggestions for improvements, please [open an issue](https://github.com/dhrub1999/Portfolio-New) so that I can track and address them together.
 
 2. **Submitting Pull Requests**: If you have a fix or feature you'd like to contribute, consider submitting a pull request. Follow these steps:
 
@@ -150,7 +150,7 @@ Here's how you can get involved and contribute:
    - Push your changes to your forked repository.
    - Submit a pull request to the main repository, explaining the changes and improvements you've made.
 
-3. **Providing Feedback**: Feel free to share your feedback or suggestions for enhancements. We're open to ideas that can enhance the functionality and user experience of this portfolio website.
+3. **Providing Feedback**: Feel free to share your feedback or suggestions for enhancements. I'm open to ideas that can enhance the functionality and user experience of this portfolio website.
 
 4. **Testing and Documentation**: Help test the website's functionality and contribute to documentation improvements. Your insights can be invaluable in ensuring a smooth user experience.
 
